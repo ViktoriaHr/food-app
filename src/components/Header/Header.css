@@ -1,0 +1,46 @@
+/* Header */
+
+.main-navi { padding: 25px 35px 30px 35px; display: flex; justify-content: space-between; align-items: stretch; font-size: 12px; line-height: 16px; letter-spacing: 1px; line-height: 30px; color: #ffffff; font-weight: 700;  text-transform: uppercase; }
+.main-navi .left-side { display: flex; }
+.main-navi ul { list-style: none outside none; }
+.main-navi .right-side .user-name { color: red;}
+.main-navi .left-side ul,
+.main-navi .right-side ul { display: flex; justify-content: space-between; }
+.main-navi .left-side ul li a,
+.main-navi .right-side ul li a { text-decoration: none; color: #fff; cursor: pointer; }
+.selected {  background-color   : red;}
+.main-navi .left-side ul li a:hover,
+.main-navi .right-side ul li a:hover { border-bottom: #c2deea 1px solid; transition: 0.5s; } 
+.main-navi .left-side ul li,
+.main-navi .right-side ul li+li { padding-left: 35px; }
+.main-navi .right-side .chose-plan { width: 120px; height: 40px; text-transform: uppercase; background-color: #ffffff; border: 2px solid #ffffff; font-size: 12px; line-height: 40px; background-color: transparent; color: #ffffff;  font-weight: 700; margin-top: -5px; }
+.main-navi .m-navi { display: none; }
+.main-navi .nav-btn { display: none; }
+.main-navi .inner-content .text-c { padding: 0 10%; position: relative; flex-basis: 30%; } 
+.main-navi .inner-content .text-c h1 { font-size: 70px; line-height: 100px; color: #000; font-weight: 700;  }
+.main-navi .inner-content .text-c h1 strong { color: #000; display: block; }
+.main-navi .inner-content .text-c p { font-size: 20px; line-height: 24px; color: #000; font-weight: 700; padding-bottom: 70px; }
+.main-navi .inner-content .login-btn {  margin: 50vh auto 0; }
+
+@media only screen and (max-width: 1025px) {
+    .main-navi { padding: 20px; }
+    .main-navi .left-side ul li+li,
+    .main-navi .right-side ul li+li { padding-left: 20px; }
+}
+
+@media only screen and (max-width: 768px) {
+    .main-navi { flex-direction: column; align-items: center; }
+    .main-navi .chose-plan { display: none; }
+    .main-navi .left-side ul, .right-side ul { flex-direction: column; }
+    .main-navi .left-side ul li, 
+    .main-navi .left-side ul li+li, 
+    .main-navi .right-side ul li+li { padding: 0px; }
+    .main-navi .right-side { padding-left: 90px; }
+    .main-navi .mobile-menu-style { padding: 0px; margin-top: 20px; width: 93px; height: 28px; border: 1px solid #c2deea; color: #fff; }
+    .main-navi .inner-content h1 { font-size: 50px; line-height: 70px; padding-top: 80px; }
+    .main-navi .m-menu { display: none; }
+    .main-navi .m-menu:hover { width: 120px; height: 28px; }
+    .main-navi .m-navi, .m-menu { display: block; transition: all .4s; margin-left: 20px; text-align: center; width: 90px; height: 28px; border: 1px solid #c2deea; color: #fff;  }
+}
+
+

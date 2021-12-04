@@ -1,0 +1,44 @@
+
+/* footer */
+footer { background-color: #161418; }
+footer .container { width: 69.37%; margin: 0 auto; }
+footer p, 
+footer a { font-size: 14px; line-height: 30px; color: #ffffff; font-weight: 400; text-decoration: none; }
+footer .container { display: flex; justify-content: space-between; flex-direction: row; flex-wrap:wrap;  padding-top: 75px; }
+footer .container .socials-c { display: flex; justify-content: space-between; flex-direction:  column; width:40.54% }
+footer .container .socials-c .social-media { max-width: 310px; }
+footer .container .socials-c .social-media ul { display: flex; justify-content: flex-start; flex-wrap: wrap; flex-direction: row; }
+footer .container .socials-c .social-media ul li { list-style: none; }
+footer .container .socials-c .social-media ul li+li { margin-left: 15px;  }
+footer .container .socials-c .social-media ul li p { line-height: 16px; }
+footer .container .blogs { width:31.53%; display: flex; justify-content: space-between;  flex-direction:  column; }
+footer .container .blogs>p { text-transform: uppercase; }
+footer .container .blogs .blog { position: relative; }
+footer .container .blogs .blog img { position: absolute; top: -15%; left: 0; }
+footer .container .blogs .blog p { margin-left: 135px; max-height: 80px; }
+footer .copy { color: #c2deea; text-align: center; padding: 70px 0 35px 0; }
+
+
+
+
+@media only screen and (max-width: 1260px) { 
+    footer p, footer a { font-size: 12px; line-height: 20px; }
+    footer .container .blogs .blog img { top: 0% }
+}
+
+@media only screen and (max-width: 1025px) {
+    footer p, footer a { line-height: 20px; }
+
+}
+@media only screen and (max-width: 970px) {
+    footer .inner-content .socials-c,
+    footer .inner-content .blogs { width: 50%; height: 300px; justify-content: space-around; }
+    footer .container .blogs .blog img { top: -30px; padding-bottom: 10px; }
+    footer .copy { padding: 35px 0 35px 0; }
+}
+
+@media only screen and (max-width: 768px) { 
+    footer .container { flex-direction: column; padding-top: 20px; }
+    footer .inner-content .socials-c, footer .inner-content .blogs { width: 100%; }
+}
+
