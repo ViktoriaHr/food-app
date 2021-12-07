@@ -1,14 +1,12 @@
-/* Login */
-
 .main-container { display: flex;  width: 100%; background-color: hsla(0, 100%, 100%, 0.78); box-shadow: 0 0 50px rgb(20, 19, 19); padding: 10px;}
-.main-container img { width: 500px; height: auto; }
+.main-container img { width: 400px; height: auto; }
 .main-container .login-form { display: flex; flex-wrap: wrap; flex-direction: column; width: calc(100% - 350px); padding: 0 180px; box-sizing: border-box; }
-.main-container .login-form h2 { font-size: 26px; line-height: 30px; color: #161418; font-weight: 700; text-transform: uppercase; text-align: center; margin: 55px 80px; }
+.main-container .login-form h2 { font-size: 26px; line-height: 30px; color: #161418; font-weight: 700; text-transform: uppercase; text-align: center; margin: 30px 50px; }
 .login-form ul { display: flex; justify-content: space-around; flex-wrap: wrap; margin-bottom: 55px; }
 .login-form ul li { list-style: none;  flex-grow: 1; }
 .login-form ul li input { width: 160px; border: none; font-size: 16px; line-height: 35px; color: #161418; font-weight: 400; border-bottom: 1px solid #ccc; }
 .main-container .login-form .btn-auth { display: flex; flex-wrap: wrap;  } 
-.main-container .login-form .login-btn { margin: 20px auto; display: block; } 
+.main-container .login-form .main-btn { margin: 20px auto; display: block; } 
 
 @media only screen and (max-width: 1280px) { 
     .main-container { left: 10%; }

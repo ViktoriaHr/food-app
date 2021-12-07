@@ -1,0 +1,4 @@
+.main-container.create { width: 40%; margin: 0 auto; }
+.create-form .field { padding: 10px 0; }
+.create-form .field label { padding: 0 5px 0 0; }
+.create-form .field .input {   display: inline-block;   width: 100%; }

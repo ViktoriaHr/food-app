@@ -1,9 +1,11 @@
 const Contacts = () => {
     return (
-        <div class="main-container">
+        <div className="main-container">
             <div className="text-c">
                  <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro dicta dolor ipsum nostrum qui ratione est iste quia similique facilis vitae debitis excepturi quam corporis eos, numquam rem placeat aliquid?
+                 Do you need to contact us?
+                 Don't forget to follow on Instagram @ 
+
                 </p>
             </div>
         </div>

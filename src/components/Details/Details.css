@@ -1,0 +1,2 @@
+.info-box {  display: flex; justify-content: space-between; }
+.info-box .text-holder { margin: 0 20px; }

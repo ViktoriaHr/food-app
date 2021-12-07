@@ -1,32 +1,40 @@
 import './Login.css';
+import * as authService from '../../services/authService';
 
-const Login = () => {
-    const submitHandler = (e) => {
+const Login = ({history }) => {
+    const onLogin = (e) => {
         e.preventDefault();
   
         let formData = new FormData(e.currentTarget);
          
-        let password = formData.get('passward');
-        let username = formData.get('username');
+        let email = formData.get('email');
+        let password = formData.get('password');
+   
 
-        console.log(password);
-        console.log(username);
+        authService.login(email, password)
+            .then(data => { console.log(data)})
+            .catch(err => {
+                //show notif
+                console.log(err)
+            })
+
+
+        const a = history.push('/')
+
     }
 
     return (
-            <div class="main-container">
+            <div className="main-container">
                 <img src="/assets/berries.jpg" alt="Online Booking Image" />
-                    <form class="login-form" method="POST" onSubmit={submitHandler}>
+                    <form className="login-form" method="POST" onSubmit={onLogin}>
                         <h2>Login Here</h2>
                     <ul>
                         <li><input type="text" name="username" placeholder="Username"/></li>
                         <li><input type="email" name="email" placeholder="Email" /></li>
-                        <li><input type="password"  name="password" placeholder="Password" /></li>
-                        <li><input type="password" name="repeat-pass" placeholder="Repeat Password" /></li>
+                        <li><input type="password"  name="passward" placeholder="Password" /></li>
                     </ul>
-                    <div className="btn-auth">
-                        <button type="submit" class="login-btn">Login</button>
-                        <button type="submit" class="login-btn">Register</button>
+                    <div classNameName="btn-auth">
+                        <button type="submit" className="main-btn">Login</button>
                     </div>
                 </form>
         </div>

@@ -1,49 +1,36 @@
+
 import './Recipes.css'
+import { useEffect, useState } from 'react';
+import SingleRecipe from './SingleRecipe/SingleRecipe'
+import * as recipeService from '../../services/getInfoRecipe'
+
 
 const Recipies = () => {
+
+    const [recipe, setRecipe] = useState([]);
+
+   
+    useEffect(() => {
+        recipeService.getAll()
+            .then(result => {
+                console.log(result)
+                setRecipe(result);
+            })
+    }, []);
+
     return (
-        <div class="main-container">
-            <div class="recipies-section">
-                <div class="inner-content">
-                    <div class="text">
+        <div className="main-container recipes">
+             <div className="text">
                         <h2>Here are our <strong>Best Recipes</strong></h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum asperiores deleniti ratione. Perferendis at culpa numquam aut corporis facere tempora odio sint blanditiis. Cumque aliquam accusantium harum distinctio nobis reprehenderit.</p>
                     </div>
-                    <div class="image-boxes">
-                        <div class="info-boxes">
-                            <div class="img-holder">
-                                <img src="./assets/lemon-tart.jpg" alt="Lemon Tart" />
-                            </div>
-                            <div class="info-holder">
-                                <h3>Limon Pie</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae facilis dolores provident officia, culpa hic tempore dicta, alias asperiores incidunt quos eum </p>
-                                <button class="read-more-btn">Read More</button>
-                            </div>
-                        </div>
-                        <div class="info-boxes">
-                            <div class="img-holder">
-                                <img src="./assets/broccoli-pizza.jpg" alt="Broccoli Pizza" />
-                            </div>
-                            <div class="info-holder">
-                                <h3>Broccoli Pizza</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae facilis dolores provident officia, culpa hic tempore dicta, alias asperiores incidunt quos eum </p>
-                                <button class="read-more-btn">Read More</button>
-                            </div>
-                        </div>
-                        <div class="info-boxes">
-                            <div class="img-holder">
-                                <img src="./assets/bow.jpg" alt="Bow" />
-                            </div>
-                            <div class="info-holder">
-                                <h3>Healthy Bow</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae facilis dolores </p>
-                                <button class="read-more-btn">Read More</button>
-                            </div>
-                        </div>
-                    </div>
+            <div className="recipies-section">
+                    {recipe.length > 0
+                    ? ( recipe.map(x => <SingleRecipe key={x._id} recipe={x} />) )
+                    :  <p>No recipes</p> }
+
                 </div>
             </div>
-        </div>
     );
 }
 

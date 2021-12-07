@@ -8,6 +8,8 @@ import Footer from './components/Footer/Footer';
 import Contacts from './components/Contacts/Contacts';
 import Recipes from './components/Recipes/Recipes';
 import Details from './components/Details/Details';
+import ErorrPage from './components/ErrorPage/ErrorPage';
+import CreateRecipe from './components/CreateRecipe/CreateRecipe';
 
 function App() {
   return (       
@@ -16,16 +18,19 @@ function App() {
                 <div className="inner-content">
                   <Switch>
                     <Route path="/" exact component={Welcome}/>
-                    <Route path="/recipes" exact component={Recipes}/>
-                    <Route path="/recipes/:recipeId" component={Details}/>
+                    <Route path="/recipes" component={Recipes}/>
+                    <Route path="/details/:recipeId" component={Details}/>
                     <Route path="/contacts" component={Contacts}/>
                     <Route path="/login" component={Login}/>
-                    <Route path="/register/" exact component={Register}/>
-                    {/* <Route path="/logout" component={Logout}/> */}
+                    <Route path="/register" component={Register}/>
+                    <Route path="/create" component={CreateRecipe}/>
+                    <Route to="*" component={ErorrPage}/>
 
                   </Switch>
                 </div>
+
                 <Footer />
+
           </div>
   );
 }

@@ -1,0 +1,9 @@
+{
+    "github.gitAuthentication": false,
+    "git.checkoutType": [],
+    "git.confirmEmptyCommits": false,
+    "git.confirmForcePush": false,
+    "git.confirmNoVerifyCommit": false,
+    "git.confirmSync": false,
+    "git.decorations.enabled": false
+}
