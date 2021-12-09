@@ -1,16 +1,15 @@
-const baseUrl = 'http://softuni-custom-server-food.herokuapp.com/jsonstore';
+const baseUrl = 'https://zazzyparcel.backendless.app/api/data/';
 
 
 export async function getAll() {
-    const response = await fetch(`${baseUrl}/food`)
-     
+    const response = await fetch(`${baseUrl}/recipes`)
     const res = await response.json();
-    const result = Object.values(res);
-
-    return result;
+    return res;
 }
 
-export const getRecipe = (recipeId) => {
-    return fetch(`${baseUrl}/food/${recipeId}`)
+export const getRecipe = (objectId) => {
+    console.log(objectId);
+    return fetch(`${baseUrl}/recipes/${objectId}`)
     .then(res => res.json());
+   
 };

@@ -13,7 +13,7 @@ const SingleRecipe = ({
             <div className="info-holder">
                 <h3>{recipe.name}</h3>
                 <p>{recipe.description} </p>
-                <Link className="read-more-btn" to={`details/${recipe._id}`}>See full recipe</Link>
+                <Link className="read-more-btn" to={`details/${recipe.objectId}`}>See full recipe</Link>
             </div>
         </div>)
 }

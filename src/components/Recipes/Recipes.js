@@ -6,10 +6,8 @@ import * as recipeService from '../../services/getInfoRecipe'
 
 
 const Recipies = () => {
-
     const [recipe, setRecipe] = useState([]);
 
-   
     useEffect(() => {
         recipeService.getAll()
             .then(result => {
@@ -17,7 +15,6 @@ const Recipies = () => {
                 setRecipe(result);
             })
     }, []);
-
     return (
         <div className="main-container recipes">
              <div className="text">
@@ -26,7 +23,7 @@ const Recipies = () => {
                     </div>
             <div className="recipies-section">
                     {recipe.length > 0
-                    ? ( recipe.map(x => <SingleRecipe key={x._id} recipe={x} />) )
+                    ? ( recipe.map(x => <SingleRecipe key={x.objectId} recipe={x} />) )
                     :  <p>No recipes</p> }
 
                 </div>

@@ -4,20 +4,16 @@ import { useState, useEffect } from 'react';
 import * as recipeService from '../../services/getInfoRecipe';
 
 
-const Details = ({ history,
-    location, match }) => {
-
-    console.log(match.params);
-
+const Details = () => {
     const [recipe, setRecipe] = useState({});
-    const { recipeId } = useParams();
+    const { objectId } = useParams();
 
     useEffect(() => {
-        recipeService.getRecipe(recipeId)
+        recipeService.getRecipe(objectId)
             .then(result => {
                 setRecipe(result);
             })
-    }, [recipeId]);
+    }, [objectId]);
 
 
     return (
@@ -28,7 +24,7 @@ const Details = ({ history,
                         <img src={recipe.imgUrl} alt="Lemon Tart" width="50" height="75" />
                     </div>
                     <div className="text-holder">
-                        <h3>{recipe.name}</h3>
+                        <h3>{recipe.Name}</h3>
                         <p>{recipe.description}</p>
 
                     <div className="user-actions">
