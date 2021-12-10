@@ -1,9 +1,22 @@
 
 import {Link } from 'react-router-dom'
+import { useEffect, useState } from 'react';
+
 
 const SingleRecipe = ({
     recipe
 }) => {
+
+    // const [recipelength, setRecipeLength] = useState([]);
+    
+    // useEffect(() => {
+    // const newRecipeLegth = recipe.description.split(' ').length;
+
+    //     return () => {
+    //         setRecipeLength(newRecipeLegth+1)
+    //         console.log(newRecipeLegth);
+    //     }
+    // }, []);
 
     return (
         <div className="info-boxes">
@@ -12,7 +25,7 @@ const SingleRecipe = ({
             </div>
             <div className="info-holder">
                 <h3>{recipe.name}</h3>
-                <p>{recipe.description} </p>
+                <p>{ recipe.description} </p>
                 <Link className="read-more-btn" to={`details/${recipe.objectId}`}>See full recipe</Link>
             </div>
         </div>)

@@ -1,25 +1,30 @@
+import { useHistory } from 'react-router-dom';
+
 import './Login.css';
 import * as authService from '../../services/authService';
 
-const Login = ({history }) => {
+
+const Login = () => {
+
+    let history = useHistory();
+    
     const onLogin = (e) => {
         e.preventDefault();
-  
+
         let formData = new FormData(e.currentTarget);
          
         let email = formData.get('email');
         let password = formData.get('password');
-   
+
 
         authService.login(email, password)
-            .then(data => { console.log(data)})
+            .then((data) => { console.log(data)
+                history.push('/recipes');
+            })
             .catch(err => {
-                //show notif
-                console.log(err)
+                console.log(err.message);
             })
 
-
-        const a = history.push('/')
 
     }
 
@@ -29,7 +34,7 @@ const Login = ({history }) => {
                     <form className="login-form" method="POST" onSubmit={onLogin}>
                         <h2>Login Here</h2>
                     <ul>
-                        <li><input type="text" name="username" placeholder="Username"/></li>
+                        {/* <li><input type="text" name="username" placeholder="Username"/></li> */}
                         <li><input type="email" name="email" placeholder="Email" /></li>
                         <li><input type="password"  name="passward" placeholder="Password" /></li>
                     </ul>

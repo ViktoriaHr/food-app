@@ -1,26 +1,43 @@
-export const login = (email, password) => {
-   return fetch('http://localhost:3030/users/login', {
+const baseUrl = 'https://zazzyparcel.backendless.app';
+export const register = async (email, password) => {
+    return await fetch(`${baseUrl}/api/users/register`, {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({ email, password })
+    })
+        .then(res => res.json()); 
+};
+
+
+export const login = async (email, password) => {
+   const result = await fetch(`${baseUrl}/api/users/login`, {
         method: 'POST',
         headers: {
             'content-type' : 'application/json',
         },
-        body: JSON.stringify({email,password})
-    })
-    .then(res => {
-        if(res.ok) {
-            return res.json()
-        }
-        throw res.json();
-    })
-}
-
-export const getUser = () => {
-    let username = localStorage.getItem('username');
-
-    return username;
+        body: JSON.stringify({ email, password  
+            })
+    });
+    
+    const jsonRes = await result.json();
+    
+    if(jsonRes.ok) {
+        return jsonRes;
+    } else {
+        throw jsonRes;
+    }
 
 }
 
-export const isAuth = () => {
-    return Boolean(getUser());
-} 
+// export const getUser = () => {
+//     let username = localStorage.getItem('username');
+
+//     return username;
+
+// }
+
+// export const isAuth = () => {
+//     return Boolean(getUser());
+// } 
