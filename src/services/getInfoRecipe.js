@@ -1,5 +1,4 @@
-const baseUrl = 'https://zazzyparcel.backendless.app/api/data/';
-
+const baseUrl = 'https://zazzyparcel.backendless.app/api/data/'
 
 export async function getAll() {
     const response = await fetch(`${baseUrl}/recipes`)
@@ -8,7 +7,6 @@ export async function getAll() {
 }
 
 export const getRecipe = (objectId) => {
-    console.log(objectId);
     return fetch(`${baseUrl}/recipes/${objectId}`)
     .then(res => res.json());
    

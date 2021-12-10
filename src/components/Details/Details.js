@@ -6,15 +6,18 @@ import * as recipeService from '../../services/getInfoRecipe';
 
 const Details = () => {
     const [recipe, setRecipe] = useState({});
+    const [ingr, setIngredients] = useState({});
     const { objectId } = useParams();
 
     useEffect(() => {
         recipeService.getRecipe(objectId)
             .then(result => {
-                setRecipe(result);
+                setRecipe(result)
+                setIngredients(Object.values(result.ingredients));
             })
-    }, [objectId]);
+            .catch(err => { console.log(err) })
 
+    }, [objectId]);
 
     return (
         <div className="main-container">
@@ -27,10 +30,17 @@ const Details = () => {
                         <h3>{recipe.Name}</h3>
                         <p>{recipe.description}</p>
 
-                    <div className="user-actions">
-                        <button className="main-btn" ><Link to="edit">Edit</Link></button>
-                        <button className="main-btn" ><a  href="#" >Delete</a></button>
-                    </div>
+                        <ul>
+                            {ingr.length > 0 &&
+                            ingr.map
+                            (x => <li key={x}>{x}</li>)}
+                        </ul>
+
+                        <div className="user-actions">
+
+                            <button className="main-btn" ><Link to="edit">Edit</Link></button>
+                            <button className="main-btn" ><a href="#" >Delete</a></button>
+                        </div>
                     </div>
                 </div>
 

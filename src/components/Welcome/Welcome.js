@@ -1,4 +1,3 @@
- import { Link } from 'react-router-dom'
 
 const Welcome = () => {
     return (
@@ -11,7 +10,6 @@ const Welcome = () => {
                 </p>
             </div>
            
-            <button className="main-btn" ><Link to="login">Login</Link></button>
         </div>
     );
 }
