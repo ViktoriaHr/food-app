@@ -1,5 +1,6 @@
 
 import { useHistory } from 'react-router-dom';
+
 import * as authService from '../../services/authService'
 
 const Register = () => {
@@ -16,6 +17,8 @@ const Register = () => {
         authService.register(email, password)   
         .then(data => {
             console.log(data)
+
+
             history.push('/recipes');
         });
     }

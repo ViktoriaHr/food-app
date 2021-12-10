@@ -4,7 +4,6 @@ import './Header.css';
 
 
 const Header = () => {
-
     return (
         <header className="main-navi">
         <div className="left-side">
@@ -18,7 +17,7 @@ const Header = () => {
         </div>
         <div className="right-side">
             <ul>
-                <li className="user-name">Welcome name</li>
+                <li className="user-name">Name</li>
                 <li className="m-menu show"><NavLink activeClassName="selected" to="/login">Login</NavLink></li>
                 <li className="m-menu show"><NavLink activeClassName="selected" to="/register">Sing Up</NavLink></li>
             </ul>

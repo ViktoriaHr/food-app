@@ -3,7 +3,7 @@ body { font-family: 'Open Sans', sans-serif; }
 .wrapper { width: 100%; background-image: url(/assets/food-main-image.jpg); width: 100%; background-repeat: no-repeat; background-size: cover; background-position: center; position: relative; z-index: 5; }
 .wrapper:before { content: ""; background: rgba(0, 0, 0, 0.2); top: 0; bottom: 0; right: 0; left: 0; display: block; position: absolute; z-index: -1; }
 
-.main-btn, .read-more-btn { width: 169px; height: 46px; background-color: #c2deea;  font-size: 14px; line-height: 46px; letter-spacing: 1px; line-height: 30px; color: #ffffff; font-weight: 700; border: none; text-transform: uppercase; }
+.main-btn, .read-more-btn { width: 169px; height: 46px; background-color: #c2deea;  font-size: 14px; line-height: 46px; letter-spacing: 1px; line-height: 30px; color: #ffffff; font-weight: 700; border: none; text-transform: uppercase; text-decoration: none; }
 .main-btn:hover, .read-more-btn:hover {cursor: pointer; background-color: #80380c; }
 .inner-content {  width: 69.37%;  margin: 0 auto; }
 .logo-fitness a { background-image: url(/assets/logo.png); width: 70px; height: 61px; display: block; font-size: 0px; text-indent: -100%; margin-top: -15px; }

@@ -13,7 +13,7 @@ import CreateRecipe from './components/CreateRecipe/CreateRecipe';
 
 function App() {
   return (       
-        <div className="wrapper">              
+        <div className="wrapper">      
               <Header />
                 <div className="inner-content">
                   <Switch>
@@ -30,7 +30,6 @@ function App() {
                 </div>
 
                 <Footer />
-
           </div>
   );
 }

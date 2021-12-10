@@ -7,17 +7,6 @@ const SingleRecipe = ({
     recipe
 }) => {
 
-    // const [recipelength, setRecipeLength] = useState([]);
-    
-    // useEffect(() => {
-    // const newRecipeLegth = recipe.description.split(' ').length;
-
-    //     return () => {
-    //         setRecipeLength(newRecipeLegth+1)
-    //         console.log(newRecipeLegth);
-    //     }
-    // }, []);
-
     return (
         <div className="info-boxes">
             <div className="img-holder">
@@ -25,7 +14,10 @@ const SingleRecipe = ({
             </div>
             <div className="info-holder">
                 <h3>{recipe.name}</h3>
-                <p>{ recipe.description} </p>
+                <p>{ 
+                recipe.description.split(' ').length > 50
+                ? recipe.description.split(' ').join(' ').slice(0, 150) + "..."
+                : recipe.description } </p>
                 <Link className="read-more-btn" to={`details/${recipe.objectId}`}>See full recipe</Link>
             </div>
         </div>)
