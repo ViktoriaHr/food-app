@@ -10,10 +10,12 @@ import Recipes from './components/Recipes/Recipes';
 import Details from './components/Details/Details';
 import ErorrPage from './components/ErrorPage/ErrorPage';
 import CreateRecipe from './components/CreateRecipe/CreateRecipe';
+import { AuthProvider } from './context/AuthContext'
 
 function App() {
-  return (       
-        <div className="wrapper">      
+  return (     
+    <AuthProvider>      
+        <div className="wrapper">  
               <Header />
                 <div className="inner-content">
                   <Switch>
@@ -31,6 +33,8 @@ function App() {
 
                 <Footer />
           </div>
+          </AuthProvider>    
+
   );
 }
 

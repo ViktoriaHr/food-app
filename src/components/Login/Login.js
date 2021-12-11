@@ -1,11 +1,12 @@
 import { useHistory } from 'react-router-dom';
-
+import { useContext } from 'react'
 import './Login.css';
 import * as authService from '../../services/authService';
 
+import { AuthContext } from  '../../context/AuthContext'
 
 const Login = () => {
-
+    const { login } = useContext(AuthContext)
     let history = useHistory();
 
     const onLogin = (e) => {
@@ -17,6 +18,7 @@ const Login = () => {
         
         authService.login(email, password)
             .then((data) => { console.log(data)
+                login(data)
                 history.push('/recipes');
             })
             .catch(err => {

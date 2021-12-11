@@ -1,2 +1,7 @@
 .info-box {  display: flex; justify-content: space-between; }
-.info-box .text-holder { margin: 0 20px; }
+.info-box .details-img-holder { margin: 0 20px; }
+.info-box .text-holder h3 { font-size: 30px; line-height: 34px;}
+.info-box .text-holder p { margin-top: 20px;}
+
+.info-box .text-holder ul {margin-top: 50px;}
+.info-box .text-holder ul > li { margin-top: 10px;}
