@@ -3,8 +3,8 @@ import { createContext, useState } from 'react'
 export const AuthContext = createContext();
 
 const initialState = {
-    ownerId : "",
-    email : ""
+    ownerId: "",
+    email: ""
 }
 
 export const AuthProvider = ({
@@ -12,15 +12,17 @@ export const AuthProvider = ({
 }) => {
     const [user, setUser] = useState(initialState);
 
-
     const login = (email) => {
-        setUser (
+        setUser(
             email,
         )
-
     }
+    
+    const logout = () => {
+        setUser(initialState);
+    };
     return (
-        <AuthContext.Provider value = {{user, login}}>
+        <AuthContext.Provider value={{ user, login, logout }}>
             {children}
         </AuthContext.Provider>
     )

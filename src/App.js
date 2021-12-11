@@ -11,6 +11,7 @@ import Details from './components/Details/Details';
 import ErorrPage from './components/ErrorPage/ErrorPage';
 import CreateRecipe from './components/CreateRecipe/CreateRecipe';
 import { AuthProvider } from './context/AuthContext'
+import Logout from './components/Logout/Logout';
 
 function App() {
   return (     
@@ -24,6 +25,7 @@ function App() {
                     <Route path="/details/:objectId" component={Details}/>
                     <Route path="/contacts" component={Contacts}/>
                     <Route path="/login" component={Login}/>
+                    <Route path="/logout" component={Logout}/>
                     <Route path="/register" component={Register}/>
                     <Route path="/create" component={CreateRecipe}/>
                     <Route to="*" component={ErorrPage}/>

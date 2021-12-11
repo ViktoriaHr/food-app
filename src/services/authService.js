@@ -32,13 +32,11 @@ export const login = async (email, password) => {
 };
 
 
-// export const getUser = () => {
-//     let username = localStorage.getItem('username');
-
-//     return username;
-
-// }
-
-// export const isAuth = () => {
-//     return Boolean(getUser());
-// } 
+export const logout = async (ownerId) => {
+    return await fetch (`${baseUrl}/api/users/logout`, {
+        method: 'GET',
+        headers: {
+            'user-token': ownerId
+        }
+    })
+};
