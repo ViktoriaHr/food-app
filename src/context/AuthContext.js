@@ -12,12 +12,13 @@ export const AuthProvider = ({
 }) => {
     const [user, setUser] = useState(initialState);
 
-    const login = (email) => {
+    const login = (data) => {
         setUser(
-            email,
+            data
         )
+        console.log(data);
     }
-    
+
     const logout = () => {
         setUser(initialState);
     };
