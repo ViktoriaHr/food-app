@@ -18,7 +18,7 @@ const Header = () => {
 
     const userNav = (
         <ul>
-            <li className="user-name">{user.email}</li>
+            <li className="user-name">Welcome, {user.username}</li>
             <li className="m-menu show"><NavLink activeClassName="selected" to="/create">Add New Recipe</NavLink></li>
             <li className="m-menu show"><NavLink activeClassName="selected" to="/logout">Logout</NavLink></li>
 

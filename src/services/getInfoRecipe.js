@@ -14,7 +14,7 @@ export const getRecipe = (objectId) => {
 
 
 export const create = async (data, token) => {
-    let response = await fetch(`${baseUrl}/recipes`, {
+    const response = await fetch(`${baseUrl}/recipes`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json',
@@ -23,7 +23,17 @@ export const create = async (data, token) => {
         body: JSON.stringify(data)
     });
 
-    let result = await response.json();
+    const result = await response.json();
 
     return result;
 };
+
+
+export const detele = ( recipeId, token ) => {
+    return fetch (`${baseUrl}/recipes/${recipeId}`, {
+        method: 'DELETE',
+        headers: {
+            'user-token' : token,
+        }
+    }).then(result => result.json());
+}

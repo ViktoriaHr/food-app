@@ -1,13 +1,19 @@
-import { Link, useParams } from 'react-router-dom'
 import './Details.css'
-import { useState, useEffect } from 'react';
-import * as recipeService from '../../services/getInfoRecipe';
 
+
+import { Link, useParams, useHistory } from 'react-router-dom'
+import { useState, useEffect, useContext } from 'react';
+import * as recipeService from '../../services/getInfoRecipe';
+import { AuthContext } from '../../context/AuthContext';
 
 const Details = () => {
+    const history = useHistory();
     const [recipe, setRecipe] = useState({});
     const [ingr, setIngredients] = useState({});
+    const { user } = useContext(AuthContext);
     const { objectId } = useParams();
+
+    const userToken = user["user-token"];
 
     useEffect(() => {
         recipeService.getRecipe(objectId)
@@ -19,6 +25,23 @@ const Details = () => {
 
     }, [objectId]);
 
+
+    const deleteRecipe = (e) => {
+        e.preventDefault();
+
+        recipeService.detele(objectId, userToken)
+            .then(() => {
+                history.push('/');
+            });
+    };
+
+
+    const guestActions = (
+        <div className="user-actions">
+            <button className="main-btn" ><Link to="edit">Edit</Link></button>
+            <button className="main-btn" ><a href="#" onClick={deleteRecipe} >Delete</a></button>
+        </div>);
+
     return (
         <div className="main-container">
             <div className="recipies-section">
@@ -27,18 +50,14 @@ const Details = () => {
                         <img src={recipe.imgUrl} alt="Lemon Tart" width="50" height="75" />
                     </div>
                     <div className="text-holder">
-                        <h3>{recipe.Name}</h3>
+                        <h3>{recipe.name}</h3>
                         <p>{recipe.description}</p>
                         <ul>
                             {ingr.length > 0 &&
-                            ingr.map
-                            (x => <li key={x}>{x}</li>)}
+                                ingr.map
+                                    (x => <li key={x}>{x}</li>)}
                         </ul>
-                        <div className="user-actions">
-
-                            <button className="main-btn" ><Link to="edit">Edit</Link></button>
-                            <button className="main-btn" ><a href="#" >Delete</a></button>
-                        </div>
+                        {guestActions}
                     </div>
                 </div>
 
