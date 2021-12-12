@@ -57,7 +57,9 @@ const Details = () => {
                                 ingr.map
                                     (x => <li key={x}>{x}</li>)}
                         </ul>
-                        {guestActions}
+                        {user.email
+                        ? guestActions
+                        : null }
                     </div>
                 </div>
 
