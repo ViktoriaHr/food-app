@@ -25,8 +25,6 @@ const Login = () => {
                 //NOtification 
                 console.log(err.message);
             })
-
-
     }
 
     return (

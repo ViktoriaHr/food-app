@@ -1,4 +1,9 @@
-.main-container.create { width: 69.37%;  margin: 0 auto; }
-.create-form .field { padding: 10px 0; }
-.create-form .field label { padding: 0 5px 0 0; }
-.create-form .field .input {   display: inline-block;   width: 100%; }
+.main-container.create { width: 69.37%;  margin: 0 auto; flex-direction: column; align-items: center;}
+.main-container.create h2 { margin: 20px 0; }
+.create-form p { padding: 10px 0; }
+.create-form p .plus-button { background-color: #fff; cursor: pointer; border-radius: 50%; padding: 0 5px;
+}
+.create-form p label { padding: 0 5px 0 0; }
+.create-form p input,
+.create-form p textarea,
+.create-form p select  {   display: inline-block;   width: 100%; border: none; font-size: 16px; line-height: 35px; color: #161418; opacity: 0.80; font-weight: 400; border-bottom: 1px solid #ccc;}

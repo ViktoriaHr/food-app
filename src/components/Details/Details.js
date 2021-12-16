@@ -1,6 +1,5 @@
 import './Details.css'
 
-
 import { Link, useParams, useHistory } from 'react-router-dom'
 import { useState, useEffect, useContext } from 'react';
 import * as recipeService from '../../services/getInfoRecipe';
@@ -34,11 +33,9 @@ const Details = () => {
                 history.push('/');
             });
     };
-
-
     const guestActions = (
         <div className="user-actions">
-            <button className="main-btn" ><Link to="edit">Edit</Link></button>
+            <Link to={`/edit/${objectId}`} ><button className="main-btn" >Edit</button></Link>
             <button className="main-btn" ><a href="#" onClick={deleteRecipe} >Delete</a></button>
         </div>);
 
@@ -52,11 +49,8 @@ const Details = () => {
                     <div className="text-holder">
                         <h3>{recipe.name}</h3>
                         <p>{recipe.description}</p>
-                        <ul>
-                            {ingr.length > 0 &&
-                                ingr.map
-                                    (x => <li key={x}>{x}</li>)}
-                        </ul>
+                        <p>{recipe.ingredients}</p>
+                        <p>{recipe.type}</p>
                         {user.email
                         ? guestActions
                         : null }

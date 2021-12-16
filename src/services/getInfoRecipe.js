@@ -37,3 +37,18 @@ export const detele = ( recipeId, token ) => {
         }
     }).then(result => result.json());
 }
+
+
+export const update = async ( recipeId, token, newData ) => {
+    const response = await fetch (`${baseUrl}/recipes/${recipeId}`, {
+        method: 'PUT',
+        headers: {
+            'content-type': 'application/json',
+            'user-token' : token
+        },
+        body : JSON.stringify(newData)
+    });
+    const result = await response.json();
+    console.log(result);
+    return result;
+}

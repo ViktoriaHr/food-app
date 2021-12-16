@@ -1,37 +1,26 @@
-import './CreateRecipe.css'
-import { useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useContext } from "react";
-import { AuthContext } from "../../context/AuthContext";
-import * as recipeService from "../../services/getInfoRecipe";
+import { AuthContext } from '../../context/AuthContext';
+import * as recipeService from '../../services/getInfoRecipe';
 
-const CreateRecipe = () => {
-    const history = useHistory();
+const Edit = ({
+}) => {
+    const { objectId } = useParams();
     const { user } = useContext(AuthContext);
     const userToken = user["user-token"];
+    console.log(objectId)
 
-
-    const createRecipe = (e) => {
+    const editRecipe = (e) => {
         e.preventDefault();
-        const formData = new FormData(e.currentTarget);
-        const { name, description, ingredients, imgUrl, type } = Object.fromEntries(formData)
-        console.log(name)
-        recipeService.create({
-            name,
-            description,
-            ingredients,
-            imgUrl,
-            type
-        }, userToken)
-            .then((data) => {
-                console.log(data);
-            })
-    }
 
+        const newData = Object.fromEntries(new FormData(e.currentTarget))
+        recipeService.update(objectId, userToken, newData);
+    }
 
     return (
         <div className="main-container create">
-            <h2>Create New Recipe</h2>
-            <form className="create-form" onSubmit={createRecipe} method="POST" >
+            <h2>Edit New Recipe</h2>
+            <form className="create-form" method="POST" onSubmit={editRecipe} >
                 <p>
                     <label htmlFor="name">Name</label>
                     <span>
@@ -47,11 +36,11 @@ const CreateRecipe = () => {
                 <p>
                     <label htmlFor="image">Image</label>
                     <span>
-                        <input type="text" name="imgUrl"/>
+                        <input type="text" name="imgUrl" />
                     </span>
                 </p>
                 <p>
-                <label htmlFor="image">Ingridients</label>
+                    <label htmlFor="image">Ingridients</label>
                     <span>
                         <input type="text" name="ingredients" placeholder="ingredients..." />
                     </span>                </p>
@@ -66,10 +55,11 @@ const CreateRecipe = () => {
                         </select>
                     </span>
                 </p>
-                <input className="main-btn" type="submit" value="Add Recipe" />
+                <input className="main-btn" type="submit" value="Edit Recipe" />
             </form>
         </div>
     )
 }
 
-export default CreateRecipe;
+export default Edit;
+

@@ -12,15 +12,23 @@ const Register = () => {
         let formData = new FormData(e.currentTarget);
          
         let password = formData.get('password');
+        let confPass = formData.get('confirmpass');
         let email = formData.get('email');
 
-        authService.register(email, password)   
-        .then(data => {
-            console.log(data)
 
+        if (password=== confPass) {
+            authService.register(email, password)   
+            .then(data => {
+                console.log(data)
+                history.push('/recipes');
+                //login notification
 
-            history.push('/recipes');
-        });
+            });
+        } else {
+            //notification
+            console.log("wrong pass");
+        }
+    
     }
     return (
             <div className="main-container">
@@ -31,6 +39,7 @@ const Register = () => {
                         <li><input type="text" name ="username" placeholder="Name" /></li>
                         <li><input type="email" name="email" placeholder="Email" /></li>
                         <li><input type="password" name ="password" placeholder="Password" /></li>
+                        <li><input type="password" name ="confirmpass" placeholder="Repeat Password" /></li>
                     </ul>
                     <div className="btn-auth">
                         <button type="submit" className="main-btn">Register</button>
