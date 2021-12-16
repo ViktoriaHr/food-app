@@ -1,11 +1,16 @@
-import { useParams } from "react-router-dom";
-import { useContext } from "react";
+import { useParams} from "react-router-dom";
+import { useContext, useState } from "react";
 import { AuthContext } from '../../context/AuthContext';
 import * as recipeService from '../../services/getInfoRecipe';
+
+import useRecipeState from '../../hooks/useRecipeState'
+
 
 const Edit = ({
 }) => {
     const { objectId } = useParams();
+    const [recipe, setRecipe] = useRecipeState(objectId);
+
     const { user } = useContext(AuthContext);
     const userToken = user["user-token"];
     console.log(objectId)
@@ -24,30 +29,30 @@ const Edit = ({
                 <p>
                     <label htmlFor="name">Name</label>
                     <span>
-                        <input type="text" name="name" />
+                        <input type="text" name="name" defaultValue={recipe.name} />
                     </span>
                 </p>
                 <p>
                     <label htmlFor="description">Description</label>
                     <span>
-                        <textarea name="description"></textarea>
+                        <textarea name="description" defaultValue={recipe.description} ></textarea>
                     </span>
                 </p>
                 <p>
                     <label htmlFor="image">Image</label>
                     <span>
-                        <input type="text" name="imgUrl" />
+                        <input type="text" name="imgUrl"  defaultValue={recipe.imgUrl}/>
                     </span>
                 </p>
                 <p>
                     <label htmlFor="image">Ingridients</label>
                     <span>
-                        <input type="text" name="ingredients" placeholder="ingredients..." />
+                        <input type="text" name="ingredients" placeholder="ingredients..." defaultValue={recipe.ingredients} />
                     </span>                </p>
                 <p>
                     <label htmlFor="type">Type</label>
                     <span>
-                        <select name="type">
+                        <select name="type" value={recipe.type}>
                             <option value="breakfast">Breakfast</option>
                             <option value="Dinner">Dinner</option>
                             <option value="Dessert">Dessert</option>

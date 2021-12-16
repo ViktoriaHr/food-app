@@ -1,28 +1,22 @@
 import './Details.css'
 
 import { Link, useParams, useHistory } from 'react-router-dom'
-import { useState, useEffect, useContext } from 'react';
+import {   useContext } from 'react';
 import * as recipeService from '../../services/getInfoRecipe';
 import { AuthContext } from '../../context/AuthContext';
+import CommentBox from './Comments/Comments';
+import useRecipeState from '../../hooks/useRecipeState'
+
+
 
 const Details = () => {
     const history = useHistory();
-    const [recipe, setRecipe] = useState({});
-    const [ingr, setIngredients] = useState({});
     const { user } = useContext(AuthContext);
     const { objectId } = useParams();
+    const [recipe, setRecipe] = useRecipeState(objectId);
 
     const userToken = user["user-token"];
 
-    useEffect(() => {
-        recipeService.getRecipe(objectId)
-            .then(result => {
-                setRecipe(result)
-                setIngredients(Object.values(result.ingredients));
-            })
-            .catch(err => { console.log(err) })
-
-    }, [objectId]);
 
 
     const deleteRecipe = (e) => {
@@ -33,11 +27,14 @@ const Details = () => {
                 history.push('/');
             });
     };
+
+
     const guestActions = (
         <div className="user-actions">
             <Link to={`/edit/${objectId}`} ><button className="main-btn" >Edit</button></Link>
             <button className="main-btn" ><a href="#" onClick={deleteRecipe} >Delete</a></button>
         </div>);
+
 
     return (
         <div className="main-container">
@@ -52,12 +49,15 @@ const Details = () => {
                         <p>{recipe.ingredients}</p>
                         <p>{recipe.type}</p>
                         {user.email
-                        ? guestActions
-                        : null }
+                            ? guestActions
+                            : null}
                     </div>
                 </div>
-
+                {user.email
+                    ? <CommentBox user={user} recipe={recipe}/>
+                    : null}
             </div>
+
         </div>
     );
 }

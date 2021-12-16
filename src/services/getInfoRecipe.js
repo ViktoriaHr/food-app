@@ -13,6 +13,13 @@ export const getRecipe = (objectId) => {
 };
 
 
+export const getComments= () => {
+    return fetch(`${baseUrl}/recipes/?props=name,comments`)
+    .then(res => res.json());
+   
+};
+
+
 export const create = async (data, token) => {
     const response = await fetch(`${baseUrl}/recipes`, {
         method: 'POST',
@@ -52,3 +59,4 @@ export const update = async ( recipeId, token, newData ) => {
     console.log(result);
     return result;
 }
+
