@@ -1,16 +1,16 @@
-.main-container { display: flex;  width: 100%; background-color: hsla(0, 100%, 100%, 0.78); box-shadow: 0 0 50px rgb(20, 19, 19); padding: 20px; margin: 200px 0 ;}
+.main-container { display: flex;  width: 100%; background-color: hsla(0, 100%, 100%, 0.78); box-shadow: 0 0 50px rgb(20, 19, 19); padding: 10px; margin: 150px 0 400px 0;}
 .main-container img { width: 400px; height: auto; }
-.main-container .login-form { display: flex; flex-wrap: wrap; flex-direction: column; width: calc(100% - 350px); padding: 0 150px; box-sizing: border-box; }
+.main-container .login-form { display: flex; flex-wrap: wrap; flex-direction: column; width: calc(100% - 350px); padding: 0 5%; box-sizing: border-box; }
 .main-container .login-form h2 { font-size: 26px; line-height: 30px; color: #161418; font-weight: 700; text-transform: uppercase; text-align: center; margin: 30px 50px; }
 .login-form ul { display: flex; justify-content: space-around; flex-wrap: wrap; margin-bottom: 55px; }
-.login-form ul li { list-style: none;  flex-grow: 1; }
+.login-form ul li { list-style: none; padding-top: 20px; flex-grow: 1; display: flex; justify-content: center;}
 .login-form ul li input { width: 160px; border: none; font-size: 16px; line-height: 35px; color: #161418; opacity: 0.80; font-weight: 400; border-bottom: 1px solid #ccc; }
 .main-container .login-form .btn-auth { display: flex; flex-wrap: wrap;  } 
 
 
 @media only screen and (max-width: 1280px) { 
     .main-container { left: 10%; }
-    .main-container .container img { display: none; }
+    .main-container  img { display: none; }
     .main-container .login-form { width: 100%; }
 }
 

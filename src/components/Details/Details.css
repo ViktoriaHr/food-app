@@ -1,9 +1,10 @@
 .info-box {  display: flex; justify-content: space-between; }
 .info-box .details-img-holder { margin: 0 20px; }
 .info-box .text-holder h3 { font-size: 30px; line-height: 34px;}
+.info-box .text-holder h4 { font-size: 20px; line-height: 24px; margin-top: 20px ;}
 .info-box .text-holder p { margin-top: 20px;}
 
-.info-box .text-holder ul {margin-top: 50px;}
-.info-box .text-holder ul > li { margin-top: 10px;}
+.info-box .text-holder .recipe-type { margin-top: 20px; }
+
 
 .main-container .recipies-section .comments { width: 20%;}

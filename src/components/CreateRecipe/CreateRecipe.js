@@ -23,7 +23,7 @@ const CreateRecipe = () => {
             type
         }, userToken)
             .then((data) => {
-                console.log(data);
+                history.push('/recipes')
             })
     }
 

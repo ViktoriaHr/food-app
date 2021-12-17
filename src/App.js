@@ -11,8 +11,12 @@ import Details from './components/Details/Details';
 import ErorrPage from './components/ErrorPage/ErrorPage';
 import CreateRecipe from './components/CreateRecipe/CreateRecipe';
 import Edit from './components/Edit/Edit';
-import { AuthProvider } from './context/AuthContext'
+import MyRecipes from './components/MyRecipes/MyRecipes';
 import Logout from './components/Logout/Logout';
+
+import { AuthProvider } from './context/AuthContext'
+
+
 
 function App() {
   return (     
@@ -29,6 +33,7 @@ function App() {
                     <Route path="/logout" component={Logout}/>
                     <Route path="/register" component={Register}/>
                     <Route path="/create" component={CreateRecipe}/>
+                    <Route path="/my-recipes" component={MyRecipes}/>
                     <Route path="/edit/:objectId" component={Edit}/>
                     <Route to="*" component={ErorrPage}/>
 

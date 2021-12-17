@@ -1,7 +1,7 @@
-import { NavLink } from 'react-router-dom';
-import { useContext } from 'react';
 import './Header.css';
 
+import { NavLink } from 'react-router-dom';
+import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext'
 
 
@@ -20,6 +20,7 @@ const Header = () => {
         <ul>
             <li className="user-name">Welcome, {user.username}</li>
             <li className="m-menu show"><NavLink activeClassName="selected" to="/create">Add New Recipe</NavLink></li>
+            <li className="m-menu show"><NavLink activeClassName="selected" to="/my-recipes">My Recipes</NavLink></li>
             <li className="m-menu show"><NavLink activeClassName="selected" to="/logout">Logout</NavLink></li>
 
         </ul>

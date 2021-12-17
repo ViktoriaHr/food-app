@@ -1,5 +1,5 @@
-import { useParams} from "react-router-dom";
-import { useContext, useState } from "react";
+import { useParams, useHistory} from "react-router-dom";
+import { useContext } from "react";
 import { AuthContext } from '../../context/AuthContext';
 import * as recipeService from '../../services/getInfoRecipe';
 
@@ -8,6 +8,7 @@ import useRecipeState from '../../hooks/useRecipeState'
 
 const Edit = ({
 }) => {
+    const history = useHistory();
     const { objectId } = useParams();
     const [recipe, setRecipe] = useRecipeState(objectId);
 
@@ -20,6 +21,7 @@ const Edit = ({
 
         const newData = Object.fromEntries(new FormData(e.currentTarget))
         recipeService.update(objectId, userToken, newData);
+        history.push('/recipes')
     }
 
     return (
