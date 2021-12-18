@@ -91,7 +91,7 @@ const Details = () => {
                             <h4>Ingredients</h4>
                             <p>{recipe.ingredients}</p>
                             <div className="recipe-type">Type: {recipe.type}</div>
-                            {user.email
+                            {(user.ownerId) && user.ownerId === recipe.ownerId
                                 ? guestActions
                                 : null}
                         </div>
