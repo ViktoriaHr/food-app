@@ -15,10 +15,13 @@ const Details = ({
     const { user } = useContext(AuthContext);
     const { objectId } = useParams();
     const [recipe, setRecipe] = useRecipeState(objectId);
+    const userComments = recipe.comments;
+
     const [modalShow, setModalShow] = useState(false);
+    const [newComment, setComment] = useState({});
 
 
-    console.log(recipe);
+    console.log(userComments);
     const userToken = user["user-token"];
 
     const deleteRecipeHandler = (e) => {
@@ -39,19 +42,19 @@ const Details = ({
         const formData = new FormData(e.currentTarget);
         const { comment } = Object.fromEntries(formData)
         const userId = user.ownerId;
-
+        setComment({    
+            comment: comment,
+            userId: userId,
+            username: user.username 
+ })
 
         recipeService.addComment(objectId, userToken, recipe)
             .then((recipe) => {
+         console.log(newComment);
                 setRecipe(state => ({
-                    ...state, comments: [{
-                        comment: comment,
-                        userId: userId
-                    }]
+                    ...state, comments: [...userComments, newComment]
                 }))
             })
-        console.log(recipe);
-
     }
 
     const guestActions = (
@@ -100,8 +103,8 @@ const Details = ({
                     </div>
                     <div className="comments">
                         {
-                        (recipe.comments) 
-                        ? recipe.comments.map(c => <Comments comment={c.comment} key={c.userId} /> )
+                        (userComments) 
+                        ? userComments.map(c => <Comments comment={c.comment} key={c.userId} user={c.username}/> )
                         : "No Comments"}
                     </div>
                     <div className="comment-box">

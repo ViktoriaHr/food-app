@@ -1,12 +1,16 @@
 const Contacts = ({
-        comment
+        comment,
+        user
 }) => {
     return (
-        <div className="comments-box">
+        <>
+            <div className="user-comment">{user}</div>
+            <div className="comments-box">
                  <p>
                  {comment}
                 </p>
-        </div>
+            </div>
+        </>
     );
 }
 
