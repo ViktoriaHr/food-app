@@ -1,22 +1,21 @@
 import './Notification.css'
 
-const Notification = () => ({
+const Notification = ({
     show,
-    onClose,
+    close,
+    onDelete
 }) => {
-
-    return (
-        <div className= {show ? "show" : "hide" } >
-            <div>
-                <h4>Centered Modal</h4>
-                <p>
-                    Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                    dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-                    consectetur ac, vestibulum at eros.
-                </p>
+    
+    return  (
+            <div className={show ? "notification show" : "notification hide"}  >
+                <h4>Important!!!</h4>
+                <div class="content">
+                Are you sure you want to delete this recipe?
+                </div>
+                <button className="notification-btn" onClick={close}>No, I'm not sure</button>
+                <button className="notification-btn" onClick={onDelete}>Yes, I'm sure</button>
             </div>
-        </div>
     );
-};
+}
 
 export default Notification;

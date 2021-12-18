@@ -1,13 +1,15 @@
-import { useHistory } from 'react-router-dom';
-import { useContext } from 'react'
 import './Login.css';
-import * as authService from '../../services/authService';
+import { useHistory } from 'react-router-dom';
+import { useContext, useState } from 'react'
 
-import { AuthContext } from  '../../context/AuthContext'
+import * as authService from '../../services/authService';
+import { AuthContext } from '../../context/AuthContext'
+
 
 const Login = () => {
     const { login } = useContext(AuthContext)
     let history = useHistory();
+    let [error, setError] = useState();
 
     const onLogin = (e) => {
         e.preventDefault();
@@ -15,23 +17,26 @@ const Login = () => {
         let formData = new FormData(e.currentTarget);
         const email = formData.get('email');
         const password = formData.get('password');
-        
+
         authService.login(email, password)
-            .then((data) => { console.log(data)
+            .then((data) => {
                 login(data)
                 history.push('/recipes');
             })
             .catch(err => {
-                //NOtification 
-                console.log(err.message);
+                setError(err.message);
+                console.log(err.message); 
             })
     }
 
     return (
             <div className="main-container">
                 <img src="/assets/berries.jpg" alt="Online Booking Image" />
-                    <form className="login-form" method="POST" onSubmit={onLogin}>
-                        <h2>Login Here</h2>
+                <form className="login-form" method="POST" onSubmit={onLogin}>
+                    <h2>Login Here</h2>
+                    <div className="error">
+                        <p>{error}</p>
+                    </div>
                     <ul>
                         <li><input type="email" name="email" placeholder="Email" /></li>
                         <li><input type="password" name="password" placeholder="Password" /></li>
@@ -40,10 +45,8 @@ const Login = () => {
                         <button type="submit" className="main-btn">Login</button>
                     </div>
                 </form>
-        </div>
-
+            </div>
     )
-
 }
 
 export default Login;

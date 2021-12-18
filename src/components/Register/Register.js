@@ -1,10 +1,13 @@
 
-import { useHistory } from 'react-router-dom';
+import { useState } from 'react';
 
 import * as authService from '../../services/authService'
 
-const Register = () => {
-    const history = useHistory();
+const Register = ({
+    history
+
+}) => {
+    const [error, setError] = useState();
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -19,14 +22,15 @@ const Register = () => {
         if (password=== confPass) {
             authService.register(email, password)   
             .then(data => {
-                console.log(data)
                 history.push('/recipes');
-                //login notification
-
-            });
+                console.log(data)
+            })
+            .catch(err => {
+                setError(err.message);
+                console.log(err.message); 
+            })
         } else {
-            //notification
-            console.log("wrong pass");
+            setError(`Passwords don't match!!`)
         }
     
     }
@@ -35,6 +39,9 @@ const Register = () => {
                 <img src="/assets/berries.jpg" alt="Online Booking Image" />
                     <form className="login-form" method="POST" onSubmit={submitHandler}>
                         <h2>Register Now</h2>
+                        <div className="error">
+                            <p>{error}</p>
+                        </div>
                     <ul>
                         <li><input type="text" name ="username" placeholder="Name" /></li>
                         <li><input type="email" name="email" placeholder="Email" /></li>

@@ -25,9 +25,9 @@ const Details = () => {
 
         recipeService.detele(objectId, userToken)
             .then(() => {
-                history.push('/');
+                history.push('/recipes');
             })
-            . finally(() => {
+            .finally(() => {
                 setModalShow(false);
             })
     };
@@ -58,7 +58,7 @@ const Details = () => {
     const guestActions = (
         <div className="user-actions">
             <Link to={`/edit/${objectId}`} ><button className="main-btn" >Edit</button></Link>
-            <button className="main-btn" ><a href="#" onClick={deleteRecipeHandler} >Delete</a></button>
+            <button className="main-btn" ><a href="#" onClick={()=> setModalShow(true)} >Delete</a></button>
         </div>);
 
     // const commentBox = (
@@ -75,8 +75,8 @@ const Details = () => {
         <>
             <Notification  
                 show={modalShow} 
-                onHide={() => setModalShow(false)} 
-                onSave= {deleteRecipeHandler}
+                close={()=> setModalShow(false)}
+                onDelete={deleteRecipeHandler}
             />
             <div className="main-container">
                 <div className="recipies-section">
