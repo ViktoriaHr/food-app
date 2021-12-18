@@ -78,6 +78,7 @@ export const addComment = async (recipeId, token, newData) => {
         body: JSON.stringify(newData)
     });
     const result = await response.json();
+    console.log(result);
     return result;
 }
 

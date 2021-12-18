@@ -3,9 +3,7 @@ const Contacts = () => {
         <div className="main-container">
             <div className="text-c">
                  <p>
-                 Do you need to contact us?
-                 Don't forget to follow on Instagram @ 
-
+                 Do you need to contact us? Don't forget to follow on Instagram @ 
                 </p>
             </div>
         </div>

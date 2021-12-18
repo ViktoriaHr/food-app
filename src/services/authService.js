@@ -1,7 +1,5 @@
 const baseUrl = 'https://zazzyparcel.backendless.app';
 
-
-
 export const register = async (email, password) => {
     let result = await fetch(`${baseUrl}/api/users/register`, {
         method: 'POST',
@@ -16,7 +14,6 @@ export const register = async (email, password) => {
     } else {
         throw jsonResult;
     }
-        
 };
 
 export const login = async (email, password) => {
@@ -36,7 +33,6 @@ export const login = async (email, password) => {
         throw jsonResult;
     }
 };
-
 
 export const logout = async (ownerId) => {
     return await fetch (`${baseUrl}/api/users/logout`, {

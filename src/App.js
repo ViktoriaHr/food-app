@@ -17,7 +17,6 @@ import Logout from './components/Logout/Logout';
 import { AuthProvider } from './context/AuthContext'
 
 
-
 function App() {
   return (     
     <AuthProvider>      
@@ -42,9 +41,7 @@ function App() {
 
                 <Footer />
           </div>
-          </AuthProvider>    
-
+          </AuthProvider>
   );
 }
-
 export default App;

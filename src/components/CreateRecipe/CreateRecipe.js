@@ -1,11 +1,11 @@
 import './CreateRecipe.css'
-import { useHistory } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import * as recipeService from "../../services/getInfoRecipe";
 
-const CreateRecipe = () => {
-    const history = useHistory();
+const CreateRecipe = ({
+    history
+}) => {
     const { user } = useContext(AuthContext);
     const userToken = user["user-token"];
 

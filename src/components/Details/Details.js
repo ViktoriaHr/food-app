@@ -1,19 +1,20 @@
 
 import './Details.css'
 
-import { Link, useParams, useHistory } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { useContext, useState } from 'react';
 import * as recipeService from '../../services/getInfoRecipe';
 import { AuthContext } from '../../context/AuthContext';
 import useRecipeState from '../../hooks/useRecipeState';
-import  Notification from '../Notification/Notification';
+import Notification from '../Notification/Notification';
+import Comments from './Comments/Comments';
 
-const Details = () => {
-    const history = useHistory();
+const Details = ({
+    history
+}) => {
     const { user } = useContext(AuthContext);
     const { objectId } = useParams();
     const [recipe, setRecipe] = useRecipeState(objectId);
-    // const [comment, setComment] = useState();
     const [modalShow, setModalShow] = useState(false);
 
 
@@ -32,50 +33,48 @@ const Details = () => {
             })
     };
 
+    const addCommentHandler = (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(e.currentTarget);
+        const { comment } = Object.fromEntries(formData)
+        const userId = user.ownerId;
 
 
-    // const addCommentHandler = (e) => {
-    //     e.preventDefault();
+        recipeService.addComment(objectId, userToken, recipe)
+            .then((recipe) => {
+                setRecipe(state => ({
+                    ...state, comments: [{
+                        comment: comment,
+                        userId: userId
+                    }]
+                }))
+            })
+        console.log(recipe);
 
-    //     const formData = new FormData(e.currentTarget);
-    //     const { comment } = Object.fromEntries(formData)
-    //     const userId = user.ownerId;
-
-
-    //     recipeService.addComment(objectId, userToken, recipe)
-    //         .then((recipe) => {
-    //             setRecipe(state => ({
-    //                 ...state,
-    //                 comments: [{
-    //                     comment: comment,
-    //                     userId: userId
-    //                 }]
-    //             }))
-    //         })
-
-    // }
+    }
 
     const guestActions = (
         <div className="user-actions">
             <Link to={`/edit/${objectId}`} ><button className="main-btn" >Edit</button></Link>
-            <button className="main-btn" ><a href="#" onClick={()=> setModalShow(true)} >Delete</a></button>
+            <button className="main-btn" ><a href="#" onClick={() => setModalShow(true)} >Delete</a></button>
         </div>);
 
-    // const commentBox = (
-    //     <div>
-    //         <div>Hi {user.username}, You can add a comment here</div>
-    //         <form className="create-form" method="POST" onSubmit={addCommentHandler}  >
-    //             <input type="text" name="comment" />
-    //             <button className="main-btn" >Add a comment</button>
-    //         </form>
-    //     </div>
-    // )
+    const addCommnetBox = (
+        <div>
+            <div>Hi {user.username}, You can add a comment here</div>
+            <form className="create-form" method="POST" onSubmit={addCommentHandler}  >
+                <input type="text" name="comment" className="comment-input" />
+                <button className="main-btn" >Add a comment</button>
+            </form>
+        </div>
+    )
 
     return (
         <>
-            <Notification  
-                show={modalShow} 
-                close={()=> setModalShow(false)}
+            <Notification
+                show={modalShow}
+                close={() => setModalShow(false)}
                 onDelete={deleteRecipeHandler}
             />
             <div className="main-container">
@@ -96,12 +95,22 @@ const Details = () => {
                                 : null}
                         </div>
                     </div>
-                    {/* <div className="comments">
+                    <div className="comments-box">
+
+                    </div>
+                    <div className="comments">
+                        {
+                        (recipe.comments) 
+                        ? recipe.comments.map(c => <Comments comment={c.comment} key={c.userId} /> )
+                        : "No Comments"}
+                    </div>
+                    <div className="comment-box">
                         <div>{ }</div>
-                        {user.email
-                            ? commentBox
+                        {(user.ownerId) && user.ownerId !== recipe.ownerId
+                            ? addCommnetBox
                             : null}
-                    </div> */}
+                    </div>
+
                 </div>
 
             </div>
