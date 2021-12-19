@@ -1,8 +1,7 @@
 .main-container.recipes { display: block; margin: 80px 0 }
 .main-container .recipies-section .no-recipes { font-size: 30px; }
-.recipies-section { padding: 80px 0; }
+.recipies-section  {  padding: 80px 0; display: flex; justify-content: space-between; flex-wrap: wrap; flex-direction: row; }
 .recipies-section .inner-content p { margin-top: 25px; margin-bottom: 50px; font-size: 14px; line-height: 18px; color: #161418; font-weight: 400; }
-.recipies-section  { display: flex; justify-content: space-between; flex-wrap: wrap; flex-direction: row; }
 .recipies-section .info-boxes { flex-basis: 31.5%; display: flex; flex-direction: column; margin-bottom: 20px; background-color: #f1f4f6; }
 .recipies-section .info-boxes+.info-boxes { padding-left: 0.022%; }
 .recipies-section .info-boxes .img-holder { height: 70%; }
@@ -10,8 +9,19 @@
 .recipies-section .info-boxes .info-holder { padding: 10px 20px; display: flex; flex-direction: column; box-sizing: border-box; max-height: 100px; }
 .recipies-section .info-boxes .info-holder h3 { font-size: 26px; line-height: 30px; color: #161418; font-weight: 700; }
 .recipies-section .info-boxes .info-holder p { font-size: 12px; line-height: 26px; min-height: 190px; }
-.recipies-section .info-boxes .info-holder .read-more-btn { margin-top: -70px; }
+.recipies-section .info-boxes .info-holder .read-more-btn { margin-top: -80px; }
 
+
+
+@media only screen and (max-width: 1625px) { 
+    .recipies-section .info-boxes .img-holder { height: 60%; }
+
+}
+
+@media only screen and (max-width: 1425px) { 
+    .recipies-section .info-boxes .img-holder { height: 50%; }
+
+}
 
 @media only screen and (max-width: 1000px) { 
     .recipies-section .info-boxes { flex-direction: row; }

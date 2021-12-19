@@ -24,7 +24,7 @@ const MyRecipes = () => {
                 <div className="recipies-section">
                         {recipe.length > 0
                         ? ( recipe.map(x => <SingleRecipe key={x.objectId} recipe={x} />) )
-                        :  <h3 className="no-recipes">No recipes</h3> }
+                        :  <h3 className="no-recipes">You don't have any recipes!</h3> }
     
                     </div>
                 </div>

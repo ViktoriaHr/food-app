@@ -1,10 +1,22 @@
-.info-box {  display: flex; justify-content: space-between; }
-.info-box .details-img-holder { margin: 0 20px; }
-.info-box .text-holder h3 { font-size: 30px; line-height: 34px;}
-.info-box .text-holder h4 { font-size: 20px; line-height: 24px; margin-top: 20px ;}
-.info-box .text-holder p { margin-top: 20px;}
+.main-container.details { display: flex; width: 100%;}
+.main-container.details .recipies-section { display: flex;     flex-direction: column; }
 
-.info-box .text-holder .recipe-type { margin-top: 20px; }
-.main-container .recipies-section .comment-box .comment-input { height: 30px; width: 100%;}
+.main-container.details .recipies-section .info-box {  display: flex; justify-content: space-between; width: 88%; }
+.main-container.details .recipies-section .info-box .text-holder {  display: flex; flex-direction: column; flex-basis: 60%; }
+.main-container.details .recipies-section .info-box .text-holder h3 { font-size: 30px; line-height: 34px;}
+.main-container.details .recipies-section .info-box .text-holder h4 { font-size: 20px; line-height: 24px; margin-top: 20px ;}
+.main-container.details .recipies-section .info-box .text-holder p { margin-top: 20px;}
 
-.main-container .recipies-section .comment-box { width: 20%; }
+.main-container.details .recipies-section .info-box .text-holder .recipe-type { margin-top: 20px; }
+
+.main-container.details .recipies-section .info-box .details-img-holder { margin: 0 20px; }
+
+.main-container.details .recipies-section .comments { display: flex; flex-direction: column; width: 100%; margin: 20px; }
+.main-container.details .recipies-section .comments .single-comment { width: 50%; margin: 20px 0; background-color: wheat; border: thistle 1px solid; opacity: 0.7; border-radius: 30% 10%; }
+
+.main-container.details .recipies-section .comments .user-comment { font-size: 20px; line-height: 24px; margin: 3px 0; padding: 5px; }
+.main-container.details .recipies-section .comments .comments-box { 
+    font-style: italic; padding: 5px;}
+
+.main-container.details .recipies-section .add-comment-box { display: flex; justify-content: center; }
+.main-container.details .recipies-section .add-comment-box .comment-input { height: 20px; width: 100%; }

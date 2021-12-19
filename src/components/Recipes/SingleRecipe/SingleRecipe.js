@@ -1,11 +1,11 @@
-import {Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const SingleRecipe = ({
     recipe
 }) => {
 
     return (
-        <div className="info-boxes">
+        <div className="info-boxes recipes">
             <div className="img-holder">
                 <img src={recipe.imgUrl} alt={''} />
             </div>

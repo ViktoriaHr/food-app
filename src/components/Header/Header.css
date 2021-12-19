@@ -30,17 +30,6 @@
 
 @media only screen and (max-width: 768px) {
     .main-navi { flex-direction: column; align-items: center; }
-    .main-navi .chose-plan { display: none; }
-    .main-navi .left-side ul, .right-side ul { flex-direction: column; }
-    .main-navi .left-side ul li, 
-    .main-navi .left-side ul li+li, 
-    .main-navi .right-side ul li+li { padding: 0px; }
-    .main-navi .right-side { padding-left: 90px; }
-    .main-navi .mobile-menu-style { padding: 0px; margin-top: 20px; width: 93px; height: 28px; border: 1px solid #c2deea; color: #fff; }
-    .main-navi .inner-content h1 { font-size: 50px; line-height: 70px; padding-top: 80px; }
-    .main-navi .m-menu { display: none; }
-    .main-navi .m-menu:hover { width: 120px; height: 28px; }
-    .main-navi .m-navi, .m-menu { display: block; transition: all .4s; margin-left: 20px; text-align: center; width: 90px; height: 28px; border: 1px solid #c2deea; color: #fff;  }
 }
 
 
