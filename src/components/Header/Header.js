@@ -1,5 +1,4 @@
 import './Header.css';
-
 import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext'
