@@ -1,11 +1,9 @@
 
 import { useState } from 'react';
-
 import * as authService from '../../services/authService'
 
 const Register = ({
     history
-
 }) => {
     const [error, setError] = useState();
 
@@ -17,12 +15,13 @@ const Register = ({
         let password = formData.get('password');
         let confPass = formData.get('confirmpass');
         let email = formData.get('email');
+        let username = formData.get('username');
 
 
         if (password=== confPass) {
-            authService.register(email, password)   
+            authService.register(email, password,username)   
             .then(data => {
-                history.push('/recipes');
+                history.push('/login');
                 console.log(data)
             })
             .catch(err => {
@@ -32,7 +31,6 @@ const Register = ({
         } else {
             setError(`Passwords don't match!!`)
         }
-    
     }
     return (
             <div className="main-container">
