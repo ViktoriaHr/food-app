@@ -1,0 +1,8 @@
+.main-container.welcome { padding: 25px 20px; display: flex; justify-content: space-between;  color: white; background-size: cover; font-size: 22px; }
+
+.main-container.welcome .welcome-img { width: 500px; }
+
+.main-container.welcome .header-main,
+.main-container.welcome .login-btn,
+.main-container.welcome a { display: flex; justify-content: end; margin-top: 30px; padding: 0 5px;}
+.main-container.welcome a .main-btn.home-btn { margin: 0; }

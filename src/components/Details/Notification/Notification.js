@@ -8,6 +8,7 @@ const Notification = ({
     
     return  (
             <div className={show ? "notification show" : "notification hide"}  >
+             <a href="#" title="Close" class="modal-close" onClick={close}>x</a>
                 <h4>Important!!!</h4>
                 <div class="content">
                 Are you sure you want to delete this recipe?

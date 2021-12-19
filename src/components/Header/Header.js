@@ -34,7 +34,6 @@ const Header = () => {
                     <li className="m-navi">Menu</li>
                     <li className="m-menu show"><NavLink to="/">Home</NavLink></li>
                     <li className="m-menu show"><NavLink activeClassName="selected" to="/recipes">Recipes</NavLink></li>
-                    <li className="m-menu show"><NavLink activeClassName="selected" to="/contacts">Contacts</NavLink></li>
                 </ul>
             </div>
             <div className="right-side">

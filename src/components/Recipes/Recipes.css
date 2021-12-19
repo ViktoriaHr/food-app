@@ -26,6 +26,7 @@
 @media only screen and (max-width: 1300px) { 
     .recipies-section .info-boxes.recipes { flex-direction: row; width: 100%; height: 50%; flex-basis: 90%; }
     .recipies-section .info-boxes.recipes img { width: 380px; height: 300px; display: block; }
+    .recipies-section .info-boxes.recipes .info-holder .read-more-btn { margin-top: -50px; }
 
 }
 

@@ -5,7 +5,6 @@ import Welcome from "./components/Welcome/Welcome";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import Footer from './components/Footer/Footer';
-import Contacts from './components/Contacts/Contacts';
 import Recipes from './components/Recipes/Recipes';
 import Details from './components/Details/Details';
 import ErorrPage from './components/ErrorPage/ErrorPage';
@@ -27,7 +26,6 @@ function App() {
                     <Route path="/" exact component={Welcome}/>
                     <Route path="/recipes" component={Recipes}/>
                     <Route path="/details/:objectId" component={Details}/>
-                    <Route path="/contacts" component={Contacts}/>
                     <Route path="/login" component={Login}/>
                     <Route path="/logout" component={Logout}/>
                     <Route path="/register" component={Register}/>

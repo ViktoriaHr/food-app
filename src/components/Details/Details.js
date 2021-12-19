@@ -7,7 +7,7 @@ import { useContext, useState } from 'react';
 import * as recipeService from '../../services/getInfoRecipe';
 import { AuthContext } from '../../context/AuthContext';
 import useRecipeState from '../../hooks/useRecipeState';
-import Notification from '../Notification/Notification';
+import Notification from './Notification/Notification';
 import Comments from './Comments/Comments';
 
 const Details = ({
@@ -23,7 +23,7 @@ const Details = ({
         e.preventDefault();
         recipeService.detele(objectId, userToken)
             .then(() => {
-                history.push('/recipes');
+                history.push('/my-recipes');
             })
             .finally(() => {
                 setModalShow(false);

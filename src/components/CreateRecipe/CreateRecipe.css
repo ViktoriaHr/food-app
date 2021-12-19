@@ -1,4 +1,4 @@
-.main-container.create { width: 69.37%;  margin: 0 auto; flex-direction: column; align-items: center;}
+.main-container.create { width: 69.37%;  margin: 0 auto; flex-direction: column; align-items: center; margin-bottom: 200px;}
 .main-container.create h2 { margin: 20px 0; }
 .create-form p { padding: 10px 0; }
 .create-form p .plus-button { background-color: #fff; cursor: pointer; border-radius: 50%; padding: 0 5px;

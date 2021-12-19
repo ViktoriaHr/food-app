@@ -1,15 +1,19 @@
+import './Welcome.css'
+import { Link } from 'react-router-dom'
 
 const Welcome = () => {
     return (
-        <div className="main-container">
+        <div className="main-container welcome">
+            <img src="/assets/light.jpg" alt="Welcome Image" className="welcome-img"/>
             <div className="text-c">
-            <h1>Your Recipe <strong>Diaries</strong></h1>
-                 <p>
-                    The best collection of Healty food recipes.
-                    A Food Blog designed to delight your palate
-                </p>
+                <div className="header-main">
+                    <h1>Welcome to our recipe diaries</h1>
+                </div>
+                <div className="login-btn">
+                    <span>Click here if you want to share your recipes with us</span>
+                </div>
+                <Link to="/login"><button className="main-btn home-btn">Login</button></Link>
             </div>
-           
         </div>
     );
 }

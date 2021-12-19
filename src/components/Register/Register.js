@@ -38,7 +38,8 @@ const Register = ({
             <div className="main-container">
                 <img src="/assets/berries.jpg" alt="Online Booking Image" />
                     <form className="login-form" method="POST" onSubmit={submitHandler}>
-                        <h2>Register Now</h2>
+                        <h2>Welcome</h2>
+                        <h3>Let's create yout account!!</h3>
                         <div className="error">
                             <p>{error}</p>
                         </div>

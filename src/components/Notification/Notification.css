@@ -1,5 +1,0 @@
-.show { display: block; }
-.hide { display: none; }
-.notification { width: 60%; height: 90px; position: fixed; background-color: #f6baba; top: 10%; padding: 20px; font-size: 20px; line-height: 24px;
-}
-.notification-btn { width: 50%; display: block; background-color: rgb(243, 160, 145); margin-top: 2px; font-size: 18px; line-height: 22px;}

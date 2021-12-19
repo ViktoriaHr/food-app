@@ -1,0 +1,14 @@
+.show { display: block; }
+.hide { display: none; }
+.notification { width: 50%; height: 90px; position: fixed; background-color: #f6baba6b; top: 10%; padding: 20px; font-size: 20px; line-height: 24px; border: #000 1px solid; }
+
+.modal-close { color: rgb(10, 9, 9); line-height: 50px; font-size: 80%; position: absolute; right: 0; text-align: center; top: 0; width: 70px; text-decoration: none; }
+
+.notification-btn { width: 50%; display: block; background-color: rgb(243, 160, 145); margin-top: 2px; font-size: 18px; line-height: 22px;}
+
+
+@media only screen and (max-width: 868px) {
+    .notification { font-size: 15px; line-height: 19px; height: 130px; top: 16%}
+}
+
+
