@@ -29,10 +29,10 @@ const Header = () => {
     return (
         <header className="main-navi">
             <div className="left-side">
-                <span className="logo-fitness"><NavLink to="/" >Home</NavLink></span>
+                <span className="logo-site"><NavLink to="/" >Home</NavLink></span>
                 <ul>
                     <li className="m-navi">Menu</li>
-                    <li className="m-menu show"><NavLink to="/">Home</NavLink></li>
+                    <li className="m-menu show"><NavLink activeClassName="selected" to="/">Home</NavLink></li>
                     <li className="m-menu show"><NavLink activeClassName="selected" to="/recipes">Recipes</NavLink></li>
                 </ul>
             </div>

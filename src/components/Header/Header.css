@@ -1,14 +1,15 @@
 /* Header */
 
-.main-navi { padding: 25px 35px 30px 35px; display: flex; justify-content: space-between; align-items: stretch; font-size: 15px; line-height: 19px; letter-spacing: 1px; line-height: 30px; color: #ffffff; font-weight: 700;  text-transform: uppercase; }
-.main-navi .left-side { display: flex; }
+.main-navi { padding: 10px 35px; display: flex; justify-content: space-between; align-items: stretch; font-size: 15px; line-height: 19px; letter-spacing: 1px; line-height: 30px; color: #ffffff; font-weight: 700;  text-transform: uppercase; }
+.main-navi .left-side, 
+.main-navi .right-side { display: flex; align-items: center;}
 .main-navi ul { list-style: none outside none; }
 .main-navi .right-side .user-name { color: red;}
 .main-navi .left-side ul,
 .main-navi .right-side ul { display: flex; justify-content: space-between; }
 .main-navi .left-side ul li a,
 .main-navi .right-side ul li a { text-decoration: none; color: #fff; cursor: pointer; }
-.selected {  background-color   : red;}
+.selected {  font-size: 20px;}
 .main-navi .left-side ul li a:hover,
 .main-navi .right-side ul li a:hover { border-bottom: #c2deea 1px solid; transition: 0.5s; } 
 .main-navi .left-side ul li,
