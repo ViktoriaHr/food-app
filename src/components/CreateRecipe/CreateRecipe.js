@@ -8,8 +8,6 @@ const CreateRecipe = ({
 }) => {
     const { user } = useContext(AuthContext);
     const userToken = user["user-token"];
-
-
     const createRecipe = (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
@@ -26,7 +24,6 @@ const CreateRecipe = ({
                 history.push('/recipes')
             })
     }
-
 
     return (
         <div className="main-container create">
@@ -51,9 +48,9 @@ const CreateRecipe = ({
                     </span>
                 </p>
                 <p>
-                <label htmlFor="image">Ingridients</label>
+                <label htmlFor="image">Ingredients</label>
                     <span>
-                        <input type="text" name="ingredients" placeholder="ingredients..." />
+                        <input type="text" name="ingredients" placeholder="Ingredients..." />
                     </span>                </p>
                 <p>
                     <label htmlFor="type">Type</label>
@@ -71,5 +68,4 @@ const CreateRecipe = ({
         </div>
     )
 }
-
 export default CreateRecipe;

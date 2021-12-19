@@ -2,8 +2,6 @@ import { useContext, useEffect } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import * as authService from "../../services/authService";
 
-
-
 const Logout = ({
     history
 }) => {

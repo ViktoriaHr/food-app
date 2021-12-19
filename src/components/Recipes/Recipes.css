@@ -1,4 +1,4 @@
-.main-container.recipes { display: block; margin: 80px 0 }
+.main-container.recipes { display: block; margin: 30px 0 }
 .main-container .recipies-section .no-recipes { font-size: 30px; }
 .recipies-section  {  padding: 80px 0; display: flex; justify-content: space-between; flex-wrap: wrap; flex-direction: row; }
 .recipies-section .inner-content p { margin-top: 25px; margin-bottom: 50px; font-size: 14px; line-height: 18px; color: #161418; font-weight: 400; }
