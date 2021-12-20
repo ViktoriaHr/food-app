@@ -18,6 +18,7 @@ const Details = ({
     const [recipe, setRecipe] = useRecipeState(objectId);
     const [modalShow, setModalShow] = useState(false);
     const userToken = user["user-token"];
+    const date = new Date(recipe.created);    
 
     const deleteRecipeHandler = (e) => {
         e.preventDefault();
@@ -50,6 +51,7 @@ const Details = ({
         }})
     }
     
+
     const guestActions = (
         <div className="user-actions">
             <Link to={`/edit/${objectId}`} ><button className="main-btn" >Edit</button></Link>
@@ -71,7 +73,6 @@ const Details = ({
             ? (recipe.comments).map(c => <Comments comment={c.comment} key={c.userId} user={c.username}/> )
             : <p>No Comments</p>
     )
-    
     return (
         <>
             <Notification
@@ -93,6 +94,8 @@ const Details = ({
                             <p>{recipe.ingredients}</p>
                             <h4>Type:</h4>
                             <div className="recipe-type">{recipe.type}</div>
+                            <h4>Created on:</h4>
+                            <div>{(recipe.created) ? date.toLocaleDateString() : null }</div>
                             {(user.ownerId) && user.ownerId === recipe.ownerId
                                 ? guestActions
                                 : null}
