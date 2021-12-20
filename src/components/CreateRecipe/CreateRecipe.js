@@ -1,5 +1,5 @@
 import './CreateRecipe.css'
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import * as recipeService from "../../services/getInfoRecipe";
 
@@ -7,12 +7,13 @@ const CreateRecipe = ({
     history
 }) => {
     const { user } = useContext(AuthContext);
+    let [error, setError] = useState();
+
     const userToken = user["user-token"];
     const createRecipe = (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const { name, description, ingredients, imgUrl, type } = Object.fromEntries(formData)
-        console.log(name)
         recipeService.create({
             name,
             description,
@@ -20,14 +21,22 @@ const CreateRecipe = ({
             imgUrl,
             type
         }, userToken)
-            .then((data) => {
-                history.push('/recipes')
+            .then(() => {
+                history.push('/my-recipes')
+            })
+            .catch(err => {
+                console.log(err);
+                if(err.code == "8023") {
+                    setError("Please add image url");
+                }
+
             })
     }
 
     return (
         <div className="main-container create">
             <h2>Create New Recipe</h2>
+            <p className="error">{error}</p>
             <form className="create-form" onSubmit={createRecipe} method="POST" >
                 <p>
                     <label htmlFor="name">Name</label>
@@ -50,7 +59,7 @@ const CreateRecipe = ({
                 <p>
                 <label htmlFor="image">Ingredients</label>
                     <span>
-                        <input type="text" name="ingredients" placeholder="Ingredients..." />
+                        <input type="text" name="ingredients" />
                     </span>                </p>
                 <p>
                     <label htmlFor="type">Type</label>
@@ -59,7 +68,7 @@ const CreateRecipe = ({
                             <option value="breakfast">Breakfast</option>
                             <option value="Dinner">Dinner</option>
                             <option value="Dessert">Dessert</option>
-                            <option value="Drinks">Drinks</option>
+                            <option value="Snaks">Snaks</option>
                         </select>
                     </span>
                 </p>

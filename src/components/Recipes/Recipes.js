@@ -20,7 +20,7 @@ const Recipies = () => {
              <div className="text">
                         <h2>Here are our <strong>Best Recipes</strong></h2>
                         <p>We’ve organized these recipes every way we could think of so you don't have to! Dietary restrictions, weeknight dinners, meal prep recipes, some of our most tried-and-true… no matter how you browse, we’re sure you’ll find just what you were looking for.</p>
-                    </div>
+            </div>
             <div className="recipies-section">
                     {recipe.length > 0
                     ? ( recipe.map(x => <SingleRecipe key={x.objectId} recipe={x} />) )

@@ -2,7 +2,7 @@ import { createContext, useState } from 'react'
 
 export const AuthContext = createContext();
 
-const initialState = {
+const initalValue = {
     ownerId: "",
     email: ""
 }
@@ -10,7 +10,7 @@ const initialState = {
 export const AuthProvider = ({
     children
 }) => {
-    const [user, setUser] = useState(initialState);
+    const [user, setUser] = useState(initalValue);
 
     const login = (data) => {
         setUser(
@@ -20,7 +20,7 @@ export const AuthProvider = ({
     }
 
     const logout = () => {
-        setUser(initialState);
+        setUser(initalValue);
     };
     return (
         <AuthContext.Provider value={{ user, login, logout }}>

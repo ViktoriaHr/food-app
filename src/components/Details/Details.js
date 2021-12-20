@@ -1,13 +1,13 @@
 import './Details.css'
-
 import uniqid from 'uniqid';
 
 import { Link, useParams } from 'react-router-dom'
 import { useContext, useState } from 'react';
+
 import * as recipeService from '../../services/getInfoRecipe';
 import { AuthContext } from '../../context/AuthContext';
 import useRecipeState from '../../hooks/useRecipeState';
-import Notification from './Notification/Notification';
+import Notification from '../Notification/Notification';
 import Comments from './Comments/Comments';
 
 const Details = ({
@@ -78,7 +78,8 @@ const Details = ({
             <Notification
                 show={modalShow}
                 close={() => setModalShow(false)}
-                onDelete={deleteRecipeHandler}
+                onConfirm={deleteRecipeHandler}
+                showQuestion = {"Are you sure you want to delete this recipe?"}
             />
             <div className="main-container details">
                 <div className="recipies-section">

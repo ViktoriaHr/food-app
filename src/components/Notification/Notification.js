@@ -3,7 +3,8 @@ import './Notification.css'
 const Notification = ({
     show,
     close,
-    onDelete
+    onConfirm,
+    showQuestion
 }) => {
     
     return  (
@@ -11,10 +12,10 @@ const Notification = ({
              <a href="#" title="Close" className="modal-close" onClick={close}>x</a>
                 <h4>Important!!!</h4>
                 <div className="content">
-                Are you sure you want to delete this recipe?
+                    {showQuestion}
                 </div>
                 <button className="notification-btn" onClick={close}>No, I'm not sure</button>
-                <button className="notification-btn" onClick={onDelete}>Yes, I'm sure</button>
+                <button className="notification-btn" onClick={onConfirm}>Yes, I'm sure</button>
             </div>
     );
 }

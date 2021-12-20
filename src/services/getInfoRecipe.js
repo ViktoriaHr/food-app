@@ -13,8 +13,6 @@ export async function getMyRecipes( ownerId ) {
 
 }
 
-
-
 export const getRecipe = (objectId) => {
     return fetch(`${baseUrl}/recipes/${objectId}`)
         .then(res => res.json());
@@ -23,7 +21,7 @@ export const getRecipe = (objectId) => {
 
 
 export const create = async (data, token) => {
-    const response = await fetch(`${baseUrl}/recipes`, {
+    let response = await fetch(`${baseUrl}/recipes`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json',
@@ -32,9 +30,12 @@ export const create = async (data, token) => {
         body: JSON.stringify(data)
     });
 
-    const result = await response.json();
-
-    return result;
+    let jsonResult = await response.json();
+    if (response.ok) {
+        return jsonResult;
+    } else {
+        throw jsonResult;
+    }  
 };
 
 
@@ -57,9 +58,14 @@ export const update = async (recipeId, token, newData) => {
         },
         body: JSON.stringify(newData)
     });
-    const result = await response.json();
-    return result;
-}
+    let result = await response.json();
+    
+    if (response.ok) {
+        return result;
+    } else {
+        throw result;
+    }  
+};
 
 
 export const getComments = (objectId) => {

@@ -1,33 +1,40 @@
 import { useParams} from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from '../../context/AuthContext';
 import * as recipeService from '../../services/getInfoRecipe';
 
 import useRecipeState from '../../hooks/useRecipeState'
-
 
 const Edit = ({
     history
 }) => {
     const { objectId } = useParams();
     const [recipe, setRecipe] = useRecipeState(objectId);
-
+    let [error, setError] = useState();
     const { user } = useContext(AuthContext);
     const userToken = user["user-token"];
-    console.log(objectId)
 
     const editRecipe = (e) => {
         e.preventDefault();
 
         const newData = Object.fromEntries(new FormData(e.currentTarget))
-        recipeService.update(objectId, userToken, newData);
-        history.push('/recipes')
+        recipeService.update(objectId, userToken, newData)
+        .then(() => {
+            history.push('/my-recipes')
+        })
+        .catch(err => {
+            console.log(err);
+            if(err.code == "8023") {
+                setError("Please add image url");
+            }
+
+        })
     }
 
     return (
         <div className="main-container create">
             <h2>Edit New Recipe</h2>
-            <form className="create-form" method="POST" onSubmit={editRecipe} >
+            <form className="create-form" method="POST" onSubmit={editRecipe}  >
                 <p>
                     <label htmlFor="name">Name</label>
                     <span>
@@ -49,7 +56,7 @@ const Edit = ({
                 <p>
                     <label htmlFor="image">Ingridients</label>
                     <span>
-                        <input type="text" name="ingredients" placeholder="ingredients..." defaultValue={recipe.ingredients} />
+                        <input type="text" name="ingredients" defaultValue={recipe.ingredients} />
                     </span>                </p>
                 <p>
                     <label htmlFor="type">Type</label>

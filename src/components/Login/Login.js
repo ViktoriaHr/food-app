@@ -6,9 +6,10 @@ import * as authService from '../../services/authService';
 import { AuthContext } from '../../context/AuthContext'
 
 
-const Login = () => {
+const Login = ({
+    history
+}) => {
     const { login } = useContext(AuthContext)
-    let history = useHistory();
     let [error, setError] = useState();
 
     const onLogin = (e) => {
