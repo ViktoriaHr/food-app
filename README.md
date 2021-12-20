@@ -3,7 +3,6 @@
 # Heroku link https://food-blog-react-js.herokuapp.com/
 
 ## React JS Project -  SoftUni React Course
-## Available Scripts
 
 ## Used Technologies: 
  
