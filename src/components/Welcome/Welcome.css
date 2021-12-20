@@ -1,6 +1,5 @@
 .main-container.welcome { padding: 25px 20px; display: flex; justify-content: space-between;  color: white; background-size: cover; font-size: 20px; }
 .main-container.welcome .welcome-img { width: 500px; }
-
 .main-container.welcome .header-main,
 .main-container.welcome .login-text,
 .main-container.welcome a { display: flex; justify-content: end; margin-top: 30px; padding: 0 5px;}
@@ -8,7 +7,7 @@
 .main-container.welcome a .main-btn.home-btn { margin: 0; }
 
 @media only screen and (max-width: 500px) { 
-    .main-container.welcome { padding: 15px 10px; margin: 20px; width: auto; }
+    .main-container.welcome { padding: 30px 10px; margin: 20px; width: auto; }
     .main-container.welcome .header-main { font-size: 16px; }
     .main-container.welcome .login-text { font-size: 12px; }
     .main-container.welcome .btn-log {  justify-content: center; }

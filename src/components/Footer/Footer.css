@@ -1,5 +1,4 @@
 
 footer { background-color: #161418; }
-footer .container {  padding-top: 75px; }
-footer span { display: flex; justify-content: center; color: seashell; }
-
+footer .container {  padding: 40px; }
+footer .footer-con { display: flex; justify-content: center; text-align: center; color: seashell; }

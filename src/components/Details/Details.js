@@ -92,10 +92,17 @@ const Details = ({
                             <p>{recipe.description}</p>
                             <h4>Ingredients</h4>
                             <p>{recipe.ingredients}</p>
-                            <h4>Type:</h4>
-                            <div className="recipe-type">{recipe.type}</div>
-                            <h4>Created on:</h4>
-                            <div>{(recipe.created) ? date.toLocaleDateString() : null }</div>
+                            <div className="additional-data">
+                                <div>
+                                    <h4>Type:</h4>
+                                    <div className="recipe-type">{recipe.type}</div>
+                                </div>
+                                <div>
+                                    <h4>Created on:</h4>
+                                    <div>{(recipe.created) ? date.toLocaleDateString() : null }</div>
+                                </div>
+
+                            </div>
                             {(user.ownerId) && user.ownerId === recipe.ownerId
                                 ? guestActions
                                 : null}

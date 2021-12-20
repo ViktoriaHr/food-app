@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import * as authService from '../../services/authService'
 
@@ -6,17 +5,13 @@ const Register = ({
     history
 }) => {
     const [error, setError] = useState();
-
     const submitHandler = (e) => {
         e.preventDefault();
-
         let formData = new FormData(e.currentTarget);
-         
         let password = formData.get('password');
         let confPass = formData.get('confirmpass');
         let email = formData.get('email');
         let username = formData.get('username');
-
 
         if (password=== confPass) {
             authService.register(email, password,username)   
@@ -26,10 +21,20 @@ const Register = ({
             })
             .catch(err => {
                 setError(err.message);
-                console.log(err.message); 
+                if (err.code == "3041") {
+                    setError("Please set username!")
+                }
+                if (err.code == "1155") {
+                    setError("This username already exists!")
+                }
             })
         } else {
             setError(`Passwords don't match!!`)
+        }
+
+        if (password.length<6) {
+            console.log(password.length)
+            setError('The password shoud contains at least 6 characters!')
         }
     }
     return (
@@ -52,9 +57,7 @@ const Register = ({
                     </div>
                 </form>
         </div>
-
     )
-
 }
 
 export default Register;
