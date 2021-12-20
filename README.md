@@ -1,6 +1,6 @@
 # Food Blog SPA
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Heroku link https://food-blog-react-js.herokuapp.com/
 
 ## React JS Project -  SoftUni React Course
 ## Available Scripts
@@ -20,7 +20,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Start App
 ### `npm install`
-### `npm install --save react-router-dom@5`
+### `npm install react-router-dom@5`
 ### `npm install uniqid`
 ### `npm start`
 
