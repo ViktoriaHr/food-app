@@ -23,7 +23,7 @@ function App() {
               <Header />
                 <div className="inner-content">
                   <Switch>
-                    <Route path="/" exact component={Welcome}/>
+                    <Route path={["/", "/home"]} exact component={Welcome}/>
                     <Route path="/recipes" component={Recipes}/>
                     <Route path="/details/:objectId" component={Details}/>
                     <Route path="/login" component={Login}/>

@@ -32,7 +32,7 @@ const Header = () => {
                 <span className="logo-site"><NavLink to="/" >Home</NavLink></span>
                 <ul>
                     <li className="m-navi">Menu</li>
-                    <li className="m-menu show"><NavLink activeClassName="selected" to="/">Home</NavLink></li>
+                    <li className="m-menu show"><NavLink activeClassName="selected" to="/home">Home</NavLink></li>
                     <li className="m-menu show"><NavLink activeClassName="selected" to="/recipes">Recipes</NavLink></li>
                 </ul>
             </div>

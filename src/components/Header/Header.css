@@ -1,5 +1,3 @@
-/* Header */
-
 .main-navi { padding: 10px 35px; display: flex; justify-content: space-between; align-items: stretch; font-size: 15px; line-height: 19px; letter-spacing: 1px; line-height: 30px; color: #ffffff; font-weight: 700;  text-transform: uppercase; }
 .main-navi .left-side, 
 .main-navi .right-side { display: flex; align-items: center;}
@@ -30,7 +28,8 @@
 }
 
 @media only screen and (max-width: 768px) {
-    .main-navi { flex-direction: column; align-items: center; }
+    .main-navi { flex-direction: column; align-items: center; font-size: 12px; line-height: 16px; }
+    /* .main-navi .left-side ul {  } */
 }
 
 
