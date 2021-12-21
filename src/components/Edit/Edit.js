@@ -34,32 +34,33 @@ const Edit = ({
     return (
         <div className="main-container create">
             <h2>Edit New Recipe</h2>
+            <p className="error">{error}</p>
             <form className="create-form" method="POST" onSubmit={editRecipe}  >
                 <p>
-                    <label htmlFor="name">Name</label>
+                    <label htmlFor="name" id="name">Name</label>
                     <span>
                         <input type="text" name="name" defaultValue={recipe.name} />
                     </span>
                 </p>
                 <p>
-                    <label htmlFor="description">Description</label>
+                    <label htmlFor="description" id="description">Description</label>
                     <span>
                         <textarea name="description" defaultValue={recipe.description} ></textarea>
                     </span>
                 </p>
                 <p>
-                    <label htmlFor="image">Image</label>
+                    <label htmlFor="image" id="image-url">Image(url)</label>
                     <span>
                         <input type="text" name="imgUrl"  defaultValue={recipe.imgUrl}/>
                     </span>
                 </p>
                 <p>
-                    <label htmlFor="image">Ingridients</label>
+                    <label htmlFor="ingridients" id="ingridients">Ingridients</label>
                     <span>
-                        <input type="text" name="ingredients" defaultValue={recipe.ingredients} />
+                        <textarea name="ingredients" defaultValue={recipe.ingredients} />
                     </span>                </p>
                 <p>
-                    <label htmlFor="type">Type</label>
+                    <label htmlFor="type" id="type">Type</label>
                     <span>
                         <select name="type" value={recipe.type}>
                             <option value="breakfast">Breakfast</option>

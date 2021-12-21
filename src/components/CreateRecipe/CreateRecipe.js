@@ -51,7 +51,7 @@ const CreateRecipe = ({
                     </span>
                 </p>
                 <p>
-                    <label htmlFor="image">Image</label>
+                    <label htmlFor="image">Image(url)</label>
                     <span>
                         <input type="text" name="imgUrl"/>
                     </span>
@@ -59,7 +59,7 @@ const CreateRecipe = ({
                 <p>
                 <label htmlFor="image">Ingredients</label>
                     <span>
-                        <input type="text" name="ingredients" />
+                        <textarea name="ingredients" />
                     </span>                </p>
                 <p>
                     <label htmlFor="type">Type</label>

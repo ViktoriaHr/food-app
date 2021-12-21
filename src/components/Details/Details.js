@@ -7,7 +7,7 @@ import { useContext, useState } from 'react';
 import * as recipeService from '../../services/getInfoRecipe';
 import { AuthContext } from '../../context/AuthContext';
 import useRecipeState from '../../hooks/useRecipeState';
-import Notification from '../Notification/Notification';
+import Confirm from '../Notifications/Confirm';
 import Comments from './Comments/Comments';
 
 const Details = ({
@@ -35,22 +35,24 @@ const Details = ({
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const { comment } = Object.fromEntries(formData);
-        let myNewComment = {    
+        let userNewComment = {    
             comment: comment,
             userId: uniqid(),
             username: user.username 
         };
-        const userComments = recipe.comments;
-
-        recipeService.addComment(objectId, userToken, recipe)
-        .then((recipe) => {   
-         if (recipe.comments) {
-            setRecipe({ ...recipe, comments: [...userComments, myNewComment]})
+        let userComments = recipe.comments;
+        let newData = {};
+        if(recipe.comments) {
+            newData = ({ ...recipe, comments: [...userComments, userNewComment]});
         } else {
-            setRecipe({ ...recipe, comments: [myNewComment]})
-        }})
+            newData = ({ ...recipe, comments: [userNewComment]})
+        }
+        recipeService.addComment(objectId, userToken, newData)
+        .then((res) => {   
+            setRecipe(res)
+        })
     }
-    
+        
 
     const guestActions = (
         <div className="user-actions">
@@ -71,11 +73,11 @@ const Details = ({
     const newCommnetOnClick = (
             (recipe.comments)
             ? (recipe.comments).map(c => <Comments comment={c.comment} key={c.userId} user={c.username}/> )
-            : <p>No Comments</p>
+            : <p>No Comments yet</p>
     )
     return (
         <>
-            <Notification
+            <Confirm
                 show={modalShow}
                 close={() => setModalShow(false)}
                 onConfirm={deleteRecipeHandler}

@@ -26,7 +26,7 @@ const Header = () => {
     );
 
 
-    return (
+    return ( 
         <header className="main-navi">
             <div className="left-side">
                 <span className="logo-site"><NavLink to="/" >Home</NavLink></span>

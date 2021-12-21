@@ -74,22 +74,17 @@ export const getComments = (objectId) => {
 
 }
 
-export const addComment = async (recipeId, token, newData) => {
+export const addComment = async (recipeId, token, recipe) => {
+    console.log(recipe);
     const response = await fetch(`${baseUrl}/recipes/${recipeId}`, {
         method: 'PUT',
         headers: {
             'content-type': 'application/json',
             'user-token': token
         },
-        body: JSON.stringify(newData)
+        body: JSON.stringify(recipe)
     });
     const result = await response.json();
-    console.log(result);
     return result;
 }
 
-
-
-//update single object
-//PUT
-//https://xxxx.backendless.app/api/data/<table-name>/<objectId> 

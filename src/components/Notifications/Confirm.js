@@ -1,6 +1,6 @@
-import './Notification.css'
+import './Confirm.css'
 
-const Notification = ({
+const Confirm = ({
     show,
     close,
     onConfirm,
@@ -20,4 +20,4 @@ const Notification = ({
     );
 }
 
-export default Notification;
+export default Confirm;
