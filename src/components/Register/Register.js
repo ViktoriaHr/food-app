@@ -13,7 +13,7 @@ const Register = ({
         let email = formData.get('email');
         let username = formData.get('username');
 
-        if (password=== confPass) {
+        if (password === confPass) {
             authService.register(email, password,username)   
             .then(data => {
                 history.push('/login');
@@ -21,10 +21,10 @@ const Register = ({
             })
             .catch(err => {
                 setError(err.message);
-                if (err.code == "3041") {
+                if (err.code === "3041") {
                     setError("Please set username!")
                 }
-                if (err.code == "1155") {
+                if (err.code === "1155") {
                     setError("This username already exists!")
                 }
             })

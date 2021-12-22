@@ -17,7 +17,7 @@ const Welcome = () => {
         </>)
     return (
         <div className="main-container welcome">
-            <img src="/assets/light.jpg" alt="Welcome Image" className="welcome-img" />
+            <img src="/assets/light.jpg" className="welcome-img" alt="" />
             <div className="text-c">
                 <div className="header-main">
                     <h1>Welcome to our Recipe Diaries</h1>

@@ -3,8 +3,6 @@ import './Recipes.css'
 import { useEffect, useState } from 'react';
 import SingleRecipe from './SingleRecipe/SingleRecipe'
 import * as recipeService from '../../services/getInfoRecipe'
-
-
 const Recipies = () => {
     const [recipe, setRecipe] = useState([]);
 
@@ -15,6 +13,9 @@ const Recipies = () => {
                 setRecipe(result);
             })
     }, []);
+
+    
+
     return (
         <div className="main-container recipes">
              <div className="text">

@@ -68,9 +68,9 @@ const CreateRecipe = ({
                     <span>
                         <select name="type">
                             <option value="breakfast">Breakfast</option>
-                            <option value="Dinner">Dinner</option>
-                            <option value="Dessert">Dessert</option>
-                            <option value="Snaks">Snaks</option>
+                            <option value="dinner">Dinner</option>
+                            <option value="dessert">Dessert</option>
+                            <option value="snaks">Snaks</option>
                         </select>
                     </span>
                 </p>

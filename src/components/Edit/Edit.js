@@ -64,9 +64,9 @@ const Edit = ({
                     <span>
                         <select name="type" defaultValue={recipe.type}>
                             <option value="breakfast">Breakfast</option>
-                            <option value="Dinner">Dinner</option>
-                            <option value="Dessert">Dessert</option>
-                            <option value="Drinks">Drinks</option>
+                            <option value="dinner">Dinner</option>
+                            <option value="dessert">Dessert</option>
+                            <option value="snaks">Snaks</option>
                         </select>
                     </span>
                 </p>

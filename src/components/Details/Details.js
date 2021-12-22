@@ -51,6 +51,7 @@ const Details = ({
         recipeService.addComment(objectId, userToken, newData)
         .then((res) => {   
             setRecipe(res)
+            e.value = "";
         })
     }
         
@@ -88,7 +89,7 @@ const Details = ({
                 <div className="recipies-section">
                     <div className="info-box">
                         <div className="details-img-holder">
-                            <img className="image-details" src={recipe.imgUrl} alt="Lemon Tart" width="50" height="75" />
+                            <img className="image-details" src={recipe.imgUrl} width="50" height="75" />
                         </div>
                         <div className="text-holder">
                             <h3>{recipe.name}</h3>

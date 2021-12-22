@@ -1,6 +1,6 @@
 const baseUrl = 'https://zazzyparcel.backendless.app/api/data'
 
-export async function getAll() {
+export async function getAll(category = '') {
     const response = await fetch(`${baseUrl}/recipes`)
     const res = await response.json();
     return res;

@@ -4,8 +4,9 @@ body { font-family: 'Open Sans', sans-serif; }
 .wrapper:before { content: ""; background: rgba(0, 0, 0, 0.2); top: 0; bottom: 0; right: 0; left: 0; display: block; position: absolute; z-index: -1; }
 
 a { text-decoration: none;}
-.main-btn, .read-more-btn { display: block; width: 169px; height: 46px; margin: 20px auto; background-color: #64757c;  font-size: 14px; line-height: 46px; letter-spacing: 1px; line-height: 30px; color: #ffffff; font-weight: 700; border: none; text-transform: uppercase; text-decoration: none; padding: 0 5px;}
+.main-btn, .read-more-btn { display: block; width: 169px; height: 46px; margin: 20px auto; background-color: #64757c;  font-size: 14px; line-height: 46px; letter-spacing: 1px; line-height: 30px; color: #ffffff; font-weight: 700; border: none; text-transform: uppercase; text-decoration: none; padding: 0 5px; border-radius: 5px; }
 .main-btn:hover, .read-more-btn:hover {cursor: pointer; background-color: #ad9d93; }
+.main-container { border-radius: 12px; }
 .inner-content {  width: 69.37%;  margin: 0 auto; }
 .logo-site a { background-image: url(/public/assets/logo.png); width: 70px; height: 61px; display: block; font-size: 0px; text-indent: -100%;}
-
+input { border-radius: 12px; }
