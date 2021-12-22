@@ -12,7 +12,7 @@
 * uniqid 
 * Backendless
 
-## Used Technologies: 
+## Functionality: 
 * Guest user can see all available recipes
 * Registered users can create/edit/detele own recipes and comment others recipes
 * Registered users have colletions of their own recipes
