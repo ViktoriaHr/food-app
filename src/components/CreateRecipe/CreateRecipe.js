@@ -2,6 +2,7 @@ import './CreateRecipe.css'
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import * as recipeService from "../../services/getInfoRecipe";
+import ErrorMessage from "../Errors/ErrorMessage"
 
 const CreateRecipe = ({
     history
@@ -19,7 +20,8 @@ const CreateRecipe = ({
             description,
             ingredients,
             imgUrl,
-            type
+            type,
+            authorName: user.username
         }, userToken)
             .then(() => {
                 history.push('/my-recipes')
@@ -36,7 +38,7 @@ const CreateRecipe = ({
     return (
         <div className="main-container create">
             <h2>Create New Recipe</h2>
-            <p className="error">{error}</p>
+            <ErrorMessage>{error}</ErrorMessage>
             <form className="create-form" onSubmit={createRecipe} method="POST" >
                 <p>
                     <label htmlFor="name">Name</label>

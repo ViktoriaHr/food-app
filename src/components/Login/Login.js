@@ -1,5 +1,4 @@
 import './Login.css';
-import { useHistory } from 'react-router-dom';
 import { useContext, useState } from 'react'
 
 import * as authService from '../../services/authService';

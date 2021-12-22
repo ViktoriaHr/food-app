@@ -105,6 +105,10 @@ const Details = ({
                                     <h4>Created on:</h4>
                                     <div>{(recipe.created) ? date.toLocaleDateString() : null }</div>
                                 </div>
+                                <div>
+                                    <h4>Author:</h4>
+                                    <div>{recipe.authorName}</div>
+                                </div>
 
                             </div>
                             {(user.ownerId) && user.ownerId === recipe.ownerId

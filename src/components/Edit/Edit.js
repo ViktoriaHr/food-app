@@ -62,7 +62,7 @@ const Edit = ({
                 <p>
                     <label htmlFor="type" id="type">Type</label>
                     <span>
-                        <select name="type" value={recipe.type}>
+                        <select name="type" defaultValue={recipe.type}>
                             <option value="breakfast">Breakfast</option>
                             <option value="Dinner">Dinner</option>
                             <option value="Dessert">Dessert</option>

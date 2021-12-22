@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import * as authService from '../../services/authService'
-
+import ErrorMessage from '../Errors/ErrorMessage';
 const Register = ({
     history
 }) => {
@@ -43,9 +43,8 @@ const Register = ({
                     <form className="login-form" method="POST" onSubmit={submitHandler}>
                         <h2>Welcome</h2>
                         <h3>Let's create yout account!!</h3>
-                        <div className="error">
-                            <p>{error}</p>
-                        </div>
+                        <ErrorMessage>{error}</ErrorMessage>
+
                     <ul>
                         <li><input type="text" name ="username" placeholder="Name" /></li>
                         <li><input type="email" name="email" placeholder="Email" /></li>
