@@ -19,7 +19,5 @@
 
 ## Start App
 ### `npm install`
-### `npm install react-router-dom@5`
-### `npm install uniqid`
 ### `npm start`
 

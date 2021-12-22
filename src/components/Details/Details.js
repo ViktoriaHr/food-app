@@ -40,6 +40,7 @@ const Details = ({
             userId: uniqid(),
             username: user.username 
         };
+
         let userComments = recipe.comments;
         let newData = {};
         if(recipe.comments) {
