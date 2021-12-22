@@ -15,7 +15,7 @@ const SingleRecipe = ({
                 recipe.description.split(' ').length > 20
                 ? recipe.description.split(' ').join(' ').slice(0, 150) + "..."
                 : recipe.description } </p>
-                <Link className="read-more-btn" to={`details/${recipe.objectId}`}>See full recipe</Link>
+                <Link className="read-more-btn" to={`/details/${recipe.objectId}`}>See full recipe</Link>
             </div>
         </div>)
 }

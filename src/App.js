@@ -24,6 +24,7 @@ function App() {
                 <div className="inner-content">
                   <Switch>
                     <Route path={["/", "/home"]} exact component={Welcome}/>
+                    <Route path="/recipes/:types" component={Recipes}/>
                     <Route path="/recipes" component={Recipes}/>
                     <Route path="/details/:objectId" component={Details}/>
                     <Route path="/login" component={Login}/>

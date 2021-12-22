@@ -1,13 +1,21 @@
 const baseUrl = 'https://zazzyparcel.backendless.app/api/data'
 
-export async function getAll(category = '') {
+export async function getAll() {
     const response = await fetch(`${baseUrl}/recipes`)
     const res = await response.json();
     return res;
 }
 
+
 export async function getMyRecipes( ownerId ) {
     const response = await fetch(`${baseUrl}/recipes?where=ownerId%20%3D%20%27${ownerId}%27`);
+    const res = await response.json();
+    return res;
+
+}
+
+export async function getByType( type ) {
+    const response = await fetch(`${baseUrl}/recipes?where=type%20%3D%20%27${type}%27`);
     const res = await response.json();
     return res;
 

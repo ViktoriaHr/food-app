@@ -1,13 +1,12 @@
 import './Header.css';
 import { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink,useParams } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext'
 
 
 const Header = () => {
     const { user } = useContext(AuthContext);
-
-
+    
     const guestNav = (
         <ul>
             <li className="m-menu show"><NavLink activeClassName="selected" to="/login">Login</NavLink></li>
