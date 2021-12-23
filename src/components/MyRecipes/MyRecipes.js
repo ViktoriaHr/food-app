@@ -1,6 +1,6 @@
 
 import { useEffect, useState, useContext } from 'react';
-import * as recipeService from '../../services/getInfoRecipe';
+import * as recipeService from '../../services/recipeService';
 import { AuthContext } from '../../context/AuthContext'
 import SingleRecipe from '../Recipes/SingleRecipe/SingleRecipe';
 

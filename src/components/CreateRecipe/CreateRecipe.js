@@ -1,8 +1,8 @@
 import './CreateRecipe.css'
-import { useContext, useState } from "react";
-import { AuthContext } from "../../context/AuthContext";
-import * as recipeService from "../../services/getInfoRecipe";
-import ErrorMessage from "../Errors/ErrorMessage"
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../context/AuthContext';
+import * as recipeService from '../../services/recipeService';
+import ErrorMessage from '../Errors/ErrorMessage'
 
 const CreateRecipe = ({
     history

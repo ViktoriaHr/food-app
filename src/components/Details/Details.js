@@ -1,13 +1,13 @@
 import './Details.css'
 import uniqid from 'uniqid';
-
 import { Link, useParams } from 'react-router-dom'
 import { useContext, useState } from 'react';
 
-import * as recipeService from '../../services/getInfoRecipe';
 import { AuthContext } from '../../context/AuthContext';
 import useRecipeState from '../../hooks/useRecipeState';
-import Confirm from '../Notifications/Confirm';
+import * as recipeService from '../../services/recipeService';
+
+import Confirm from './Notifications/Confirm';
 import Comments from './Comments/Comments';
 
 const Details = ({
@@ -51,7 +51,6 @@ const Details = ({
         recipeService.addComment(objectId, userToken, newData)
         .then((res) => {   
             setRecipe(res)
-            e.value = "";
         })
     }
         

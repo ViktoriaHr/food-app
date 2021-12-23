@@ -1,8 +1,8 @@
 import {  useState, useEffect } from "react";
 
-import * as recipeService from '../services/getInfoRecipe';
+import * as recipeService from '../services/recipeService';
 
-const useRecipeState = (objectId) =>{
+const useRecipeState = (objectId) => {
 
     const [recipe, setRecipe] = useState({});
     useEffect(()=>{

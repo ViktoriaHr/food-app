@@ -1,10 +1,9 @@
-import { useParams} from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
-import * as recipeService from '../../services/getInfoRecipe';
-
 import useRecipeState from '../../hooks/useRecipeState'
 
+import * as recipeService from '../../services/recipeService';
 const Edit = ({
     history
 }) => {

@@ -3,7 +3,7 @@ import './Recipes.css'
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import SingleRecipe from './SingleRecipe/SingleRecipe'
-import * as recipeService from '../../services/getInfoRecipe'
+import * as recipeService from '../../services/recipeService'
 
 const Recipes = ({
     match
@@ -42,7 +42,7 @@ const Recipes = ({
                     <li className="types"><NavLink activeClassName="selected type" to="/recipes/dessert">Desserts</NavLink></li>
                     <li className="types"><NavLink activeClassName="selected type" to="/recipes/breakfast">Breakfast</NavLink></li>
                     <li className="types"><NavLink activeClassName="selected type" to="/recipes/dinner">Dinner</NavLink></li>
-                    <li className="types"><NavLink activeClassName="selected type" to="/recipes/snaks">Snaks</NavLink></li>
+                    <li className="types"><NavLink activeClassName="selected type" to="/recipes/snaks">Snacks</NavLink></li>
                 </ul>
             </div>
             <div className="recipies-section">
