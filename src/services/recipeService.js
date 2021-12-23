@@ -76,12 +76,6 @@ export const update = async (recipeId, token, newData) => {
 };
 
 
-export const getComments = (objectId) => {
-    return fetch(`${baseUrl}/recipes/${objectId}?props=name,comments}`)
-        .then(res => res.json());
-
-}
-
 export const addComment = async (recipeId, token, recipe) => {
     console.log(recipe);
     const response = await fetch(`${baseUrl}/recipes/${recipeId}`, {
