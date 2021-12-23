@@ -7,7 +7,7 @@
 .main-navi .right-side ul { display: flex; justify-content: space-between; }
 .main-navi .left-side ul li a,
 .main-navi .right-side ul li a { text-decoration: none; color: #fff; cursor: pointer; }
-.selected {  font-size: 20px;}
+.selected {  font-size: 20px; }
 .main-navi .left-side ul li a:hover,
 .main-navi .right-side ul li a:hover { border-bottom: #c2deea 1px solid; transition: 0.5s; } 
 .main-navi .left-side ul li,

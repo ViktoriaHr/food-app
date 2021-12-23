@@ -1,7 +1,7 @@
 
 import './Recipes.css'
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import SingleRecipe from './SingleRecipe/SingleRecipe'
 import * as recipeService from '../../services/getInfoRecipe'
 
@@ -38,11 +38,11 @@ const Recipes = ({
             </div>
             <div className="nav" >
                 <ul>
-                    <li><Link to="/recipes/all" >All</Link></li>
-                    <li><Link to="/recipes/dessert">Desserts</Link></li>
-                    <li><Link to="/recipes/breakfast">Breakfast</Link></li>
-                    <li><Link to="/recipes/dinner">Dinner</Link></li>
-                    <li><Link to="/recipes/snaks">Snaks</Link></li>
+                    <li className="types"><NavLink activeClassName="selected type" to="/recipes/all" >All</NavLink></li>
+                    <li className="types"><NavLink activeClassName="selected type" to="/recipes/dessert">Desserts</NavLink></li>
+                    <li className="types"><NavLink activeClassName="selected type" to="/recipes/breakfast">Breakfast</NavLink></li>
+                    <li className="types"><NavLink activeClassName="selected type" to="/recipes/dinner">Dinner</NavLink></li>
+                    <li className="types"><NavLink activeClassName="selected type" to="/recipes/snaks">Snaks</NavLink></li>
                 </ul>
             </div>
             <div className="recipies-section">

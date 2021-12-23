@@ -1,21 +1,21 @@
 .main-container.recipes { display: block; margin: 30px 0 }
 .main-container .recipies-section .no-recipes { font-size: 30px; }
-.recipies-section  {  padding: 80px 0; display: flex; justify-content: space-between; flex-wrap: wrap; flex-direction: row; }
+.main-container.recipes .nav { padding: 10px 35px;  font-size: 15px; line-height: 19px; letter-spacing: 1px; line-height: 30px; color: #ffffff; font-weight: 700; text-transform: uppercase; padding-top: 20px; }
+.main-container.recipes .nav ul { display: flex; justify-content: space-around; list-style: none; color: wheat;} 
+.recipies-section  {  padding: 70px 0; display: flex; justify-content: space-between; flex-wrap: wrap; flex-direction: row; }
 .recipies-section .inner-content p { margin-top: 25px; margin-bottom: 50px; font-size: 14px; line-height: 18px; color: #161418; font-weight: 400; }
 .recipies-section .info-boxes.recipes { flex-basis: 31.5%; display: flex; flex-direction: column; margin-bottom: 20px; border-radius: 12px; background-color: #f1f4f6; }
 .recipies-section .info-boxes.recipes+.info-boxes.recipes { padding-left: 0.022%; }
 .recipies-section .info-boxes.recipes .img-holder { height: 70%; }
 .recipies-section .info-boxes.recipes img { width: 100%; height: 100%; object-fit: cover; }
-.recipies-section .info-boxes.recipes .info-holder { padding: 10px 20px; display: flex; flex-direction: column; box-sizing: border-box; max-height: 100px; }
+.recipies-section .info-boxes.recipes .info-holder { padding: 10px 20px; display: flex; flex-direction: column; box-sizing: border-box; max-height: 150px; }
 .recipies-section .info-boxes.recipes .info-holder h3 { font-size: 26px; line-height: 30px; color: #161418; font-weight: 700; }
 .recipies-section .info-boxes.recipes .info-holder p { font-size: 12px; line-height: 26px; min-height: 190px; }
-.recipies-section .info-boxes.recipes .info-holder .read-more-btn { margin-top: -80px; }
-
-
+.recipies-section .info-boxes.recipes .info-holder .read-more-btn { margin-top: -80px;}
+.selected.type { color: rgb(122, 122, 122)   ; }
 
 @media only screen and (max-width: 1625px) { 
     .recipies-section .info-boxes.recipes .img-holder { height: 60%; }
-
 }
 
 @media only screen and (max-width: 1425px) { 
