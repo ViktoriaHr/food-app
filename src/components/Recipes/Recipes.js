@@ -10,25 +10,19 @@ const Recipes = ({
 }) => {
     const type = match.params.types || "all";
     const [recipe, setRecipe] = useState({});
-    const [currentType, setType] = useState({});
     useEffect(() => {
-        setType(type);
-        if (currentType == type) {
-            return
-        }
         if (type == "all") {
             recipeService.getAll()
                 .then(result => {
                     setRecipe(result);
                 })
         } else {
-            console.log(type)
             recipeService.getByType(type)
                 .then(result => {
                     setRecipe(result)
                 })
         }
-    });
+    },[type]);
 
     return (
         <div className="main-container recipes">
