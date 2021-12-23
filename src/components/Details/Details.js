@@ -18,7 +18,7 @@ const Details = ({
     const [recipe, setRecipe] = useRecipeState(objectId);
     const [modalShow, setModalShow] = useState(false);
     const userToken = user["user-token"];
-    const date = new Date(recipe.created);    
+    const date = new Date(recipe.created);
 
     const deleteRecipeHandler = (e) => {
         e.preventDefault();
@@ -35,25 +35,25 @@ const Details = ({
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const { comment } = Object.fromEntries(formData);
-        let userNewComment = {    
+        let userNewComment = {
             comment: comment,
             userId: uniqid(),
-            username: user.username 
+            username: user.username
         };
 
         let userComments = recipe.comments;
         let newData = {};
-        if(recipe.comments) {
-            newData = ({ ...recipe, comments: [...userComments, userNewComment]});
+        if (recipe.comments) {
+            newData = ({ ...recipe, comments: [...userComments, userNewComment] });
         } else {
-            newData = ({ ...recipe, comments: [userNewComment]})
+            newData = ({ ...recipe, comments: [userNewComment] })
         }
         recipeService.addComment(objectId, userToken, newData)
-        .then((res) => {   
-            setRecipe(res)
-        })
+            .then((res) => {
+                setRecipe(res)
+            })
     }
-        
+
 
     const guestActions = (
         <div className="user-actions">
@@ -71,9 +71,9 @@ const Details = ({
         </div>
     )
 
-    const newCommnetOnClick = (
-            (recipe.comments)
-            ? (recipe.comments).map(c => <Comments comment={c.comment} key={c.userId} user={c.username}/> )
+    const allCommnets = (
+        (recipe.comments)
+            ? (recipe.comments).map(c => <Comments comment={c.comment} key={c.userId} user={c.username} />)
             : <p>No Comments yet</p>
     )
     return (
@@ -82,7 +82,7 @@ const Details = ({
                 show={modalShow}
                 close={() => setModalShow(false)}
                 onConfirm={deleteRecipeHandler}
-                showQuestion = {"Are you sure you want to delete this recipe?"}
+                showQuestion={"Are you sure you want to delete this recipe?"}
             />
             <div className="main-container details">
                 <div className="recipies-section">
@@ -103,7 +103,7 @@ const Details = ({
                                 </div>
                                 <div>
                                     <h4>Created on:</h4>
-                                    <div>{(recipe.created) ? date.toLocaleDateString() : null }</div>
+                                    <div>{(recipe.created) ? date.toLocaleDateString() : null}</div>
                                 </div>
                                 <div>
                                     <h4>Author:</h4>
@@ -119,11 +119,11 @@ const Details = ({
 
                     <div className="comments">
                         <h3>Comments</h3>
-                        {newCommnetOnClick}
+                        {allCommnets}
                     </div>
                     <div className="add-comment-box">
                         {(user.ownerId) && user.ownerId !== recipe.ownerId
-                            ? addCommnetBox 
+                            ? addCommnetBox
                             : null}
                     </div>
 
