@@ -65,7 +65,7 @@ const Edit = ({
                             <option value="breakfast">Breakfast</option>
                             <option value="dinner">Dinner</option>
                             <option value="dessert">Dessert</option>
-                            <option value="snaks">Snaks</option>
+                            <option value="snacks">Snacks</option>
                         </select>
                     </span>
                 </p>

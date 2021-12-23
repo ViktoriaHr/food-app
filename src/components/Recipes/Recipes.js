@@ -42,7 +42,7 @@ const Recipes = ({
                     <li className="types"><NavLink activeClassName="selected type" to="/recipes/dessert">Desserts</NavLink></li>
                     <li className="types"><NavLink activeClassName="selected type" to="/recipes/breakfast">Breakfast</NavLink></li>
                     <li className="types"><NavLink activeClassName="selected type" to="/recipes/dinner">Dinner</NavLink></li>
-                    <li className="types"><NavLink activeClassName="selected type" to="/recipes/snaks">Snacks</NavLink></li>
+                    <li className="types"><NavLink activeClassName="selected type" to="/recipes/snacks">Snacks</NavLink></li>
                 </ul>
             </div>
             <div className="recipies-section">
