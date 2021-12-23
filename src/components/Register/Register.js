@@ -13,7 +13,7 @@ const Register = ({
         let email = formData.get('email');
         let username = formData.get('username');
 
-        if (password === confPass) {
+        if ((password === confPass) && (password.length >= 5 && confPass.length > 5)) {
             authService.register(email, password,username)   
             .then(data => {
                 history.push('/login');
@@ -32,8 +32,7 @@ const Register = ({
             setError(`Passwords don't match!!`)
         }
 
-        if (password.length<6) {
-            console.log(password.length)
+        if (password.length<6 && confPass.length<6) {
             setError('The password shoud contains at least 6 characters!')
         }
     }
